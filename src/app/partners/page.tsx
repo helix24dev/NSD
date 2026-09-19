@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const partners = [
-  { n: "01", name: "Talabat", kind: "Food & grocery delivery platform" },
-  { n: "02", name: "Noon", kind: "E-commerce & quick-commerce platform" },
-  { n: "03", name: "Keeta", kind: "Food delivery platform" },
-  { n: "04", name: "Amazon", kind: "E-commerce & last-mile delivery" },
+  { name: "Talabat", kind: "Food & grocery delivery platform" },
+  { name: "Noon", kind: "E-commerce & quick-commerce platform" },
+  { name: "Keeta", kind: "Food delivery platform" },
+  { name: "Amazon", kind: "E-commerce & last-mile delivery" },
 ];
 
 export default function PartnersPage() {
@@ -40,7 +40,7 @@ export default function PartnersPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="01 / 03" label="Platform partners" />
+              <Idx label="Platform partners" />
               <h2 className="h-lg reveal">Four platforms. One supply partner.</h2>
               <p className="lede reveal" data-delay="100">
                 Relationship start dates, active status and contracted scope for each platform are available for
@@ -51,7 +51,6 @@ export default function PartnersPage() {
           <div className={styles.grid}>
             {partners.map((p, i) => (
               <div className={`${styles.cell} reveal`} data-delay={i * 80} key={p.name}>
-                <span className={`${styles.n} mono`}>{p.n}</span>
                 <span className={styles.name}>{p.name}</span>
                 <span className={styles.kind}>{p.kind}</span>
                 <ul className={styles.list}>
@@ -69,7 +68,7 @@ export default function PartnersPage() {
         <div className="wrap">
           <div className="two">
             <div>
-              <Idx n="02 / 03" label="Why platforms work with NSD" />
+              <Idx label="Why platforms work with NSD" />
               <h2 className="h-lg reveal">Supply, not competition.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Platforms own the customer and the order. NSD owns the operational layer underneath — and stays
@@ -100,7 +99,7 @@ export default function PartnersPage() {
         <div className="wrap">
           <div className="two two--center">
             <div>
-              <Idx n="03 / 03" label="Become a partner" />
+              <Idx label="Become a partner" />
               <h2 className="h-lg reveal">Scaling in the UAE? Add NSD as a supply partner.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Share the zones, unit count and start date. We&rsquo;ll scope the requirement and come back
@@ -117,7 +116,7 @@ export default function PartnersPage() {
             </div>
             <div className="card-grid reveal" data-delay="140" style={{ gridTemplateColumns: "1fr" }}>
               <div className="card">
-                <div className="cn">FOR PLATFORMS</div>
+                <div className="cn">For platforms</div>
                 <h4>What a partnership includes</h4>
                 <ul>
                   <li>Recruited, trained and documented riders</li>

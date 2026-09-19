@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="section section--navy section--grain section--grid" style={{ minHeight: "70vh" }}>
       <div className="wrap">
-        <Idx n="404" label="Off route" />
+        <Idx label="404 · Off route" />
         <h1 className="h-xl">
           This page isn&rsquo;t on <em>the route.</em>
         </h1>

@@ -15,7 +15,7 @@ export default function Home() {
         <div className="wrap">
           <div className={styles.heroTop}>
             <div>
-              <Idx n="00 / 05" label="Non-Stop Delivery" />
+              <Idx label="Non-Stop Delivery · Dubai, UAE" />
               <h1 className={`${styles.h1} reveal`}>
                 Fleet &amp; workforce operator for the UAE&rsquo;s <em>top delivery platforms.</em>
               </h1>
@@ -77,7 +77,7 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="01 / 05" label="What we do" />
+              <Idx label="What NSD does" />
               <h2 className="h-lg reveal">
                 We keep the platforms running — <em>one layer back</em> from the customer.
               </h2>
@@ -89,7 +89,6 @@ export default function Home() {
 
           <div className="card-grid">
             <div className="card reveal">
-              <div className="cn">S-01</div>
               <h4>Riders, recruited and trained</h4>
               <p>
                 We source, onboard and train riders to platform standards, then keep them deployed and supported
@@ -102,7 +101,6 @@ export default function Home() {
               </ul>
             </div>
             <div className="card reveal" data-delay="100">
-              <div className="cn">S-02</div>
               <h4>Bikes, owned and maintained</h4>
               <p>
                 Each unit is a rider paired with a maintained motorbike. NSD runs the fleet: servicing, gear and
@@ -115,7 +113,6 @@ export default function Home() {
               </ul>
             </div>
             <div className="card reveal" data-delay="200">
-              <div className="cn">S-03</div>
               <h4>Capacity, delivered under contract</h4>
               <p>
                 Platforms scale demand; NSD scales the supply. Deployed units convert into contracted, recurring
@@ -136,7 +133,7 @@ export default function Home() {
         <div className="wrap">
           <div className="two">
             <div>
-              <Idx n="02 / 05" label="How the model works" />
+              <Idx label="The model" />
               <h2 className="h-lg reveal">A fleet &amp; workforce partner — not a delivery company.</h2>
               <div className="copy reveal" data-delay="120" style={{ marginTop: 26 }}>
                 <p>
@@ -156,17 +153,14 @@ export default function Home() {
               </div>
             </div>
             <div className="reveal" data-delay="160">
-              <div className="cap" style={{ marginBottom: 6 }}>
-                Four steps
-              </div>
               {[
                 ["Platforms need capacity", "Talabat, Noon, Keeta and Amazon need a constant supply of riders and bikes."],
                 ["NSD supplies the fleet", "We recruit and train riders, and maintain the bikes."],
                 ["Platforms run the deliveries", "Riders work the platform's app while NSD operates the fleet and workforce layer."],
                 ["NSD earns recurring revenue", "Contracts convert deployed units into recurring contracted revenue."],
-              ].map(([t, d], i) => (
+              ].map(([t, d]) => (
                 <div className="handoff-item" key={t}>
-                  <div className="hn mono">0{i + 1}</div>
+                  <div className="hn"><span className="mk" /></div>
                   <div>
                     <h4>{t}</h4>
                     <p>{d}</p>
@@ -193,7 +187,7 @@ export default function Home() {
               <div className="photo-tag">NSD rider, on shift for a partner platform</div>
             </div>
             <div>
-              <Idx n="03 / 05" label="Market drivers" />
+              <Idx label="Market drivers" />
               <h2 className="h-lg reveal">E-commerce is at the core of the UAE&rsquo;s next growth phase.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Two forces drive demand for NSD&rsquo;s fleet: e-commerce growth and government infrastructure
@@ -224,7 +218,7 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="04 / 05" label="Platform partners" />
+              <Idx label="Platform partners" />
               <h2 className="h-lg reveal">Contracted fleet &amp; workforce partner to four platforms.</h2>
             </div>
             <Link href="/partners" className="arrow-link reveal">
@@ -234,7 +228,6 @@ export default function Home() {
           <div className={styles.partnerRow}>
             {["Talabat", "Noon", "Keeta", "Amazon"].map((p, i) => (
               <Link href="/partners" className={`${styles.partnerCell} reveal`} data-delay={i * 80} key={p}>
-                <span className={`${styles.pn} mono`}>0{i + 1}</span>
                 <span className={styles.pname}>{p}</span>
                 <span className={`${styles.pmeta} mono`}>Rider + bike units · contracted</span>
               </Link>
@@ -248,7 +241,7 @@ export default function Home() {
         <div className="wrap">
           <div className="two two--center">
             <div>
-              <Idx n="05 / 05" label="For investors" />
+              <Idx label="For investors" />
               <h2 className="h-lg reveal">
                 Fund units. <em>Earn per unit deployed.</em>
               </h2>
@@ -273,7 +266,7 @@ export default function Home() {
                 ["W-04", "Scalable fleet economics", "More units deployed, more contracted income."],
               ].map(([n, t, d]) => (
                 <div className={styles.pillar} key={n}>
-                  <span className="mono">{n}</span>
+                  <span className="mk" />
                   <div>
                     <h4>{t}</h4>
                     <p>{d}</p>

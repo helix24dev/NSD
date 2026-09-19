@@ -28,14 +28,14 @@ export default function ContactPage() {
         <div className="wrap">
           <div className={styles.grid}>
             <div>
-              <Idx n="01 / 02" label="Send an enquiry" />
+              <Idx label="Enquiry" />
               <div className="reveal" style={{ marginTop: 8 }}>
                 <LeadForm variant="general" />
               </div>
             </div>
 
             <div className={styles.side}>
-              <Idx n="02 / 02" label="Head office" />
+              <Idx label="Head office" />
               <div className="label-box reveal">
                 <div className="to">Non Stop Delivery LLC</div>
                 <div className="addr">
@@ -55,12 +55,12 @@ export default function ContactPage() {
 
               <div className={`${styles.routes} reveal`} data-delay="120">
                 {[
-                  ["Platforms", "Need rider + bike capacity in a zone or for a peak? Choose “Fleet & workforce supply”."],
-                  ["Investors", "Want the investor overview or a diligence pack? Choose “Investor enquiry”."],
-                  ["Riders", "Interested in riding with NSD for a partner platform? Choose “Careers / riders”."],
-                ].map(([t, d], i) => (
+                  ["Platforms", "Rider and bike capacity for a zone, a launch or a seasonal peak — scoped and contracted per unit."],
+                  ["Investors", "The investor overview, returns model and diligence pack, followed by a direct conversation with NSD."],
+                  ["Riders", "Trained, equipped and deployed to a partner platform, with NSD running the fleet behind you."],
+                ].map(([t, d]) => (
                   <div className={styles.routeRow} key={t}>
-                    <span>0{i + 1}</span>
+                    <span className="mk" />
                     <div>
                       <h4>{t}</h4>
                       <p>{d}</p>

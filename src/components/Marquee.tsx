@@ -7,7 +7,6 @@ export default function Marquee() {
       <div className="marquee-track">
         {items.map((name, i) => (
           <div className="marquee-item" key={i} aria-hidden={i >= site.partners.length}>
-            <span className="n">{String((i % site.partners.length) + 1).padStart(2, "0")}</span>
             <span className="name">{name}</span>
             <span className="sep">Contracted partner</span>
           </div>

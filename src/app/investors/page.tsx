@@ -54,7 +54,7 @@ export default function InvestorsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="01 / 05" label="The investment case" />
+              <Idx label="The investment case" />
               <h2 className="h-lg reveal">Four operating pillars.</h2>
               <p className="lede reveal" data-delay="100">
                 Built on evidence an investor can verify, not broad claims.
@@ -71,8 +71,7 @@ export default function InvestorsPage() {
               ["W-03", "Transparent reporting", "Regular reporting through NSD's MIS/CRM systems gives visibility into deployed units and performance."],
               ["W-04", "Scalable fleet economics", "More bikes and riders deployed can increase contracted income — the calculator below makes the unit economics explicit."],
             ].map(([n, t, d]) => (
-              <div className="case-row" key={n}>
-                <div className="cn mono">{n}</div>
+              <div className="case-row case-row--plain" key={n}>
                 <div className="ct">
                   <h4>{t}</h4>
                   <p>{d}</p>
@@ -88,10 +87,10 @@ export default function InvestorsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="02 / 05" label="Interactive model" />
+              <Idx label="Returns model" />
               <h2 className="h-lg reveal">Fleet-to-Returns Calculator</h2>
               <p className="lede reveal" data-delay="100">
-                Move the sliders to model an investment and see the estimated return.
+                Model an investment across fleet size, unit cost, monthly return and term — and see the estimated outcome.
               </p>
             </div>
           </div>
@@ -115,17 +114,16 @@ export default function InvestorsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="03 / 05" label="Due diligence" />
+              <Idx label="Due diligence" />
               <h2 className="h-lg reveal">What an investor should be able to verify.</h2>
               <p className="lede reveal" data-delay="100">
-                This page should answer the hard questions before asking for capital.
+                The questions NSD answers before asking for capital.
               </p>
             </div>
           </div>
           <div className="qa-grid reveal">
             {qa.map(([n, q, a]) => (
               <div className="qa-item" key={n}>
-                <div className="qn mono">{n}</div>
                 <h4>{q}</h4>
                 <p>{a}</p>
               </div>
@@ -156,7 +154,7 @@ export default function InvestorsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="04 / 05" label="Transaction process" />
+              <Idx label="Transaction process" />
               <h2 className="h-lg reveal">A structured, four-stage process.</h2>
             </div>
           </div>
@@ -169,7 +167,6 @@ export default function InvestorsPage() {
             ].map(([t, d], i) => (
               <div className="stamp reveal" data-delay={i * 90} key={t}>
                 <div className="ring">0{i + 1}</div>
-                <div className="st">Stage {["one", "two", "three", "four"][i]}</div>
                 <h4>{t}</h4>
                 <p>{d}</p>
               </div>
@@ -183,10 +180,10 @@ export default function InvestorsPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="05 / 05" label="Get in touch" />
+              <Idx label="Investor enquiry" />
               <h2 className="h-lg reveal">Request the investor overview.</h2>
               <p className="lede reveal" data-delay="100">
-                Share your details below. NSD&rsquo;s team will follow up directly — no obligation.
+                NSD&rsquo;s team will follow up directly — no obligation.
               </p>
             </div>
           </div>

@@ -4,16 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 export default function CountUp({ to, duration = 1100 }: { to: number; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [val, setVal] = useState(0);
+  // Render the final value first so the number is never stuck at 0 if the observer never fires.
+  const [val, setVal] = useState(to);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || !("IntersectionObserver" in window)) {
-      setVal(to);
-      return;
-    }
+    if (reduce || !("IntersectionObserver" in window)) return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;

@@ -1,8 +1,8 @@
-export default function Idx({ n, label }: { n: string; label: string }) {
+export default function Idx({ label }: { label: string }) {
   return (
     <div className="idx">
       <span className="bar" />
-      <b>{n}</b>&nbsp;— {label}
+      {label}
     </div>
   );
 }

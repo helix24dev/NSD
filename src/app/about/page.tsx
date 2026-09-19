@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="two">
             <div>
-              <Idx n="01 / 04" label="Who we are" />
+              <Idx label="Who we are" />
               <h2 className="h-lg reveal">A supply partner, one layer back from the customer.</h2>
             </div>
             <div className="copy reveal" data-delay="120">
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="02 / 04" label="Company facts" />
+              <Idx label="Company facts" />
               <h2 className="h-lg reveal">At a glance.</h2>
               <p className="lede reveal" data-delay="100">
                 A concise operating profile for initial review. Further detail is available during diligence.
@@ -91,7 +91,7 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="03 / 04" label="How we operate" />
+              <Idx label="How we operate" />
               <h2 className="h-lg reveal">Four operating pillars.</h2>
               <p className="lede reveal" data-delay="100">
                 Built on evidence a partner or investor can verify, not broad claims.
@@ -105,8 +105,7 @@ export default function AboutPage() {
               ["W-03", "Transparent reporting", "Regular reporting through NSD's MIS/CRM systems gives visibility into deployed units and performance."],
               ["W-04", "Scalable fleet economics", "More bikes and riders deployed can increase contracted income — the investor model makes the unit economics explicit."],
             ].map(([n, t, d]) => (
-              <div className="case-row" key={n}>
-                <div className="cn mono">{n}</div>
+              <div className="case-row case-row--plain" key={n}>
                 <div className="ct">
                   <h4>{t}</h4>
                   <p>{d}</p>
@@ -131,7 +130,7 @@ export default function AboutPage() {
               <div className="photo-tag">Al Quoz 2 · Dubai</div>
             </div>
             <div>
-              <Idx n="04 / 04" label="Head office" />
+              <Idx label="Head office" />
               <h2 className="h-lg reveal">Based in Al Quoz, operating across the UAE.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Our depot and head office sit in Al Quoz 2, Dubai — central to the platforms we serve and the

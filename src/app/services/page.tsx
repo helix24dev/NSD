@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    n: "S-01",
     title: "Rider recruitment & training",
     lede: "A trained, compliant rider for every unit.",
     body:
@@ -21,7 +20,6 @@ const services = [
     points: ["Sourcing & onboarding", "Platform SOP training", "Documentation & compliance", "Shift scheduling & support"],
   },
   {
-    n: "S-02",
     title: "Motorbike fleet & maintenance",
     lede: "A maintained bike, matched to every rider.",
     body:
@@ -29,7 +27,6 @@ const services = [
     points: ["Fleet ownership & operation", "Scheduled servicing", "Gear, kit & branding", "Replacement & downtime cover"],
   },
   {
-    n: "S-03",
     title: "Deployment & operations",
     lede: "Units deployed to the partner's app, at the partner's pace.",
     body:
@@ -37,7 +34,6 @@ const services = [
     points: ["Contracted per-unit supply", "Utilisation management", "Exceptions handling", "Scale-up on demand"],
   },
   {
-    n: "S-04",
     title: "Reporting through MIS/CRM",
     lede: "Visibility into every deployed unit.",
     body:
@@ -67,14 +63,13 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx n="01 / 03" label="What we supply" />
+              <Idx label="Fleet & workforce" />
               <h2 className="h-lg reveal">Four services. One operating layer.</h2>
             </div>
           </div>
           <div className="card-grid card-grid--2">
             {services.map((s, i) => (
-              <div className="card reveal" data-delay={i * 80} key={s.n} id={s.n.toLowerCase()}>
-                <div className="cn">{s.n}</div>
+              <div className="card reveal" data-delay={i * 80} key={s.title}>
                 <h4>{s.title}</h4>
                 <p style={{ fontWeight: 600, color: "var(--ink)", marginBottom: 10 }}>{s.lede}</p>
                 <p>{s.body}</p>
@@ -93,7 +88,7 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="two">
             <div>
-              <Idx n="02 / 03" label="The unit" />
+              <Idx label="The unit" />
               <h2 className="h-lg reveal">
                 One rider. One bike. <em>One contracted unit.</em>
               </h2>
@@ -108,9 +103,9 @@ export default function ServicesPage() {
                 ["Bike", "Motorbike owned and maintained by NSD, with gear and downtime cover."],
                 ["Deployment", "Assigned to a partner platform and working the partner's app."],
                 ["Revenue", "Each deployed unit earns contracted, recurring income."],
-              ].map(([t, d], i) => (
+              ].map(([t, d]) => (
                 <div className="handoff-item" key={t}>
-                  <div className="hn mono">0{i + 1}</div>
+                  <div className="hn"><span className="mk" /></div>
                   <div>
                     <h4>{t}</h4>
                     <p>{d}</p>
@@ -126,7 +121,7 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="two two--center">
             <div>
-              <Idx n="03 / 03" label="For platforms" />
+              <Idx label="For platforms" />
               <h2 className="h-lg reveal">Need capacity in a new zone or for a peak?</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 NSD already supplies Talabat, Noon, Keeta and Amazon. Tell us the zone, the volume and the
