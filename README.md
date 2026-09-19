@@ -30,7 +30,7 @@ npm run dev -- --port 3400
 npm run build
 ```
 
-`next.config.ts` sets `output: "export"`, so the finished site is written to `out/` as plain HTML/CSS/JS and can be uploaded to any static host (DigitalOcean App Platform static site, Netlify, cPanel `public_html`, S3, etc.). No Node runtime is needed in production.
+`next.config.ts` sets `output: "export"`, so the finished site is written to `out/` as plain HTML/CSS/JS. `netlify.toml` configures Netlify (build `npm run build`, publish `out`, Node 22); the same output can be uploaded to any static host. No Node runtime is needed in production.
 
 ## Where things live
 

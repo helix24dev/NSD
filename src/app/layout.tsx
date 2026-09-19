@@ -24,11 +24,14 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
-// On Vercel previews, absolute OG/canonical URLs point at the deployment instead of the production domain.
-const baseUrl =
-  process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production" && process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : site.url;
+// On preview deploys (Netlify / Vercel), absolute OG and canonical URLs point at the preview instead of the production domain.
+const previewUrl =
+  process.env.CONTEXT && process.env.CONTEXT !== "production" && process.env.DEPLOY_PRIME_URL
+    ? process.env.DEPLOY_PRIME_URL
+    : process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production" && process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : null;
+const baseUrl = previewUrl ?? site.url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
