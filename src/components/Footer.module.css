@@ -9,7 +9,6 @@
 .colCap{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-navy-50);margin-bottom:18px;}
 .col ul{display:grid;gap:10px;}
 .col a{font-family:var(--mono);font-size:12.5px;color:var(--on-navy-72);display:inline-flex;gap:8px;align-items:baseline;transition:color .2s;}
-.col a b{color:var(--orange);font-weight:600;font-size:11px;}
 .col a:hover{color:#fff;}
 .addr{font-style:normal;font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--on-navy-72);}
 .addr a{border-bottom:1px solid var(--hair-navy);}

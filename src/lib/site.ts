@@ -14,9 +14,9 @@ export const site = {
 };
 
 export const nav = [
-  { href: "/about", label: "About", n: "01" },
-  { href: "/services", label: "Fleet & Workforce", n: "02" },
-  { href: "/partners", label: "Partners", n: "03" },
-  { href: "/investors", label: "Investors", n: "04" },
-  { href: "/contact", label: "Contact", n: "05" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Fleet & Workforce" },
+  { href: "/partners", label: "Partners" },
+  { href: "/investors", label: "Investors" },
+  { href: "/contact", label: "Contact" },
 ];

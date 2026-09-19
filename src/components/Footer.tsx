@@ -27,13 +27,12 @@ export default function Footer() {
             <ul>
               <li>
                 <Link href="/">
-                  <b>00</b>Home
+                  Home
                 </Link>
               </li>
               {nav.map((n) => (
                 <li key={n.href}>
                   <Link href={n.href}>
-                    <b>{n.n}</b>
                     {n.label}
                   </Link>
                 </li>

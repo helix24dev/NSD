@@ -71,7 +71,6 @@ export default function Header() {
                       href={item.href}
                       className={active ? styles.active : ""}
                     >
-                      <b>{item.n}</b>
                       {item.label}
                     </Link>
                   </li>
@@ -106,13 +105,12 @@ export default function Header() {
         <ul>
           <li>
             <Link href="/">
-              <b>00</b>Home
+              Home
             </Link>
           </li>
           {nav.map((item) => (
             <li key={item.href}>
               <Link href={item.href}>
-                <b>{item.n}</b>
                 {item.label}
               </Link>
             </li>

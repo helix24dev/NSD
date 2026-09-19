@@ -38,11 +38,11 @@ export default function InvestorsPage() {
         lede="NSD supplies trained riders and maintained bikes under contract to Talabat, Noon, Keeta and Amazon, and earns recurring revenue per unit deployed. This page sets out the case, the model and what you should be able to verify."
       >
         <nav className={`${styles.subnav} reveal`} data-delay="200" aria-label="On this page">
-          <a href="#case"><b>01</b>The case</a>
-          <a href="#model"><b>02</b>Returns model</a>
-          <a href="#diligence"><b>03</b>Due diligence</a>
-          <a href="#process"><b>04</b>Process</a>
-          <a href="#enquiry"><b>05</b>Request overview</a>
+          <a href="#case">The case</a>
+          <a href="#model">Returns model</a>
+          <a href="#diligence">Due diligence</a>
+          <a href="#process">Process</a>
+          <a href="#enquiry">Request overview</a>
         </nav>
         <div style={{ marginTop: 56 }}>
           <StatLedger />
