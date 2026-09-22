@@ -6,7 +6,7 @@ import InvestorNav from "@/components/InvestorNav";
 import Picture from "@/components/Picture";
 import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
-import { IconShield, IconReport, IconGrowth, IconChart, IconBag, IconCoins } from "@/components/Icons";
+import { IconShield, IconReport, IconChart, IconCoins } from "@/components/Icons";
 import styles from "./investors.module.css";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function InvestorsPage() {
             Fund bikes on the road. <em>Earn from every one.</em>
           </>
         }
-        lede="Non Stop Delivery supplies riders and bikes to the UAE's leading delivery apps. Investors fund the bikes, and every bike on the road earns a monthly income. Start here, then explore each part in detail."
+        lede="Investors fund the bikes. We put them to work for the UAE's leading delivery apps. Every bike on the road earns a monthly income, and you receive a share of it for the length of the term."
       >
         <InvestorNav />
       </PageHero>
@@ -48,7 +48,7 @@ export default function InvestorsPage() {
               <div className="big">4</div>
               <p>leading UAE delivery apps our riders deliver for</p>
             </div>
-            <div className="tile tile-blue b-3 reveal" data-delay="100">
+            <div className="tile tile-white b-3 reveal" data-delay="100">
               <div className="small">Experience</div>
               <div className="big">10+</div>
               <p>years on UAE roads, 5+ running fleets</p>
@@ -68,22 +68,15 @@ export default function InvestorsPage() {
               <h4 className={styles.tileH4}>Regular reporting</h4>
               <p>Bikes on the road, income and costs, reported on a set schedule.</p>
             </div>
-            <div className="tile tile-green b-4 reveal" data-delay="220">
-              <div className="card-icon">
-                <IconGrowth />
-              </div>
-              <h4 className={styles.tileH4}>Grows with demand</h4>
-              <p>More bikes on the road means more income. The apps keep growing, and so does the need for riders.</p>
-            </div>
-            <Link href="/investors/questions" className="tile tile-yellow tile-link b-4 reveal" data-delay="260">
+            <Link href="/investors/questions" className="tile tile-white tile-link b-6 reveal" data-delay="220">
               <span className="arrow">→</span>
               <div className="card-icon">
                 <IconChart />
               </div>
               <h4 className={styles.tileH4}>Your questions, answered</h4>
-              <p>Who owns the bikes, how you are paid, what happens at the end of the term and more.</p>
+              <p>Who owns the bikes, how you are paid, what happens at the end of the term, and the main risks.</p>
             </Link>
-            <Link href="/investors/enquiry" className="tile tile-white tile-link b-4 reveal" data-delay="300">
+            <Link href="/investors/enquiry" className="tile tile-white tile-link b-6 reveal" data-delay="260">
               <span className="arrow">→</span>
               <div className="card-icon">
                 <IconCoins />
@@ -110,55 +103,16 @@ export default function InvestorsPage() {
               <h2 className="h-lg reveal">You fund the bikes. We put them to work.</h2>
               <div className="copy reveal" data-delay="100" style={{ marginTop: 20 }}>
                 <p>
-                  Delivery apps in the UAE need more riders every year. Non Stop Delivery has supplied them for
+                  Delivery apps in the UAE need more riders every year, and Non Stop Delivery has supplied them for
                   over a decade. What limits how many bikes we can put on the road is capital.
                 </p>
                 <p>
-                  That is where investors come in. You fund a number of bikes and riders. We recruit, train,
-                  equip and deploy them, and the apps keep them busy. Each bike earns every month, and you
-                  receive your share for the length of the term.
+                  You fund a number of bikes and riders. We recruit, train, equip and deploy them, and the apps
+                  keep them busy. Each bike earns every month, and you receive your share for the length of the
+                  term.
                 </p>
               </div>
-              <div className="btn-row reveal" data-delay="160">
-                <Link href="/investors/calculator" className="btn btn-primary">
-                  See what a fleet could earn
-                </Link>
-                <Link href="/investors/how-it-works" className="btn btn-secondary">
-                  How it works
-                </Link>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--soft" id="explore">
-        <div className="wrap">
-          <div className="sec-head">
-            <div>
-              <Eyebrow>Explore</Eyebrow>
-              <h2 className="h-lg reveal">Everything an investor needs, page by page.</h2>
-            </div>
-          </div>
-          <div className="card-grid card-grid--4">
-            {[
-              [IconChart, "Returns calculator", "Change the number of bikes, cost, return and term to see an estimate.", "/investors/calculator"],
-              [IconBag, "Your questions", "Eight straight answers about ownership, payment, risks and reporting.", "/investors/questions"],
-              [IconShield, "How it works", "The four steps from first conversation to bikes on the road.", "/investors/how-it-works"],
-              [IconCoins, "Get in touch", "Ask for the investor pack and talk to the team directly.", "/investors/enquiry"],
-            ].map(([Icon, t, d, href], i) => {
-              const I = Icon as typeof IconBag;
-              return (
-                <Link href={href as string} className="card reveal" data-delay={i * 80} key={t as string}>
-                  <div className="icon">
-                    <I />
-                  </div>
-                  <h4>{t as string}</h4>
-                  <p>{d as string}</p>
-                  <span className="text-link">Open →</span>
-                </Link>
-              );
-            })}
           </div>
         </div>
       </section>
