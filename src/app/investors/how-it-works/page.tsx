@@ -89,7 +89,7 @@ export default function HowItWorksPage() {
       <CtaBand
         title="Ready for step one? Let us walk you through the terms."
         primary={{ href: "/investors/enquiry", label: "Get in touch" }}
-        secondary={{ href: "/investors/questions", label: "Your questions" }}
+        secondary={{ href: "/investors/calculator", label: "Returns calculator" }}
       />
     </>
   );

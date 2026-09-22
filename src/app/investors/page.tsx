@@ -5,7 +5,7 @@ import Eyebrow from "@/components/Eyebrow";
 import InvestorNav from "@/components/InvestorNav";
 import Picture from "@/components/Picture";
 import CtaBand from "@/components/CtaBand";
-import { IconShield, IconReport, IconChart, IconCoins } from "@/components/Icons";
+import { IconShield, IconReport, IconCoins } from "@/components/Icons";
 import styles from "./investors.module.css";
 
 export const metadata: Metadata = {
@@ -60,22 +60,14 @@ export default function InvestorsPage() {
               <h4 className={styles.tileH4}>Backed by UAE law</h4>
               <p>Signed, attested agreements set out what you own and what you receive.</p>
             </Link>
-            <div className="tile tile-white b-3 reveal" data-delay="180">
+            <div className="tile tile-white b-3 reveal" data-delay="180" style={{ gridColumn: "span 3" }}>
               <div className="card-icon">
                 <IconReport />
               </div>
               <h4 className={styles.tileH4}>Regular reporting</h4>
               <p>Bikes on the road, income and costs, reported on a set schedule.</p>
             </div>
-            <Link href="/investors/questions" className="tile tile-white tile-link b-6 reveal" data-delay="220">
-              <span className="arrow">→</span>
-              <div className="card-icon">
-                <IconChart />
-              </div>
-              <h4 className={styles.tileH4}>Your questions, answered</h4>
-              <p>Who owns the bikes, how you are paid, what happens at the end of the term, and the main risks.</p>
-            </Link>
-            <Link href="/investors/enquiry" className="tile tile-white tile-link b-6 reveal" data-delay="260">
+            <Link href="/investors/enquiry" className="tile tile-white tile-link b-6 reveal" data-delay="220">
               <span className="arrow">→</span>
               <div className="card-icon">
                 <IconCoins />

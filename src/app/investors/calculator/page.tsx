@@ -38,9 +38,6 @@ export default function CalculatorPage() {
             financial advice. Please speak to your own advisers before investing.
           </p>
           <div className="btn-row">
-            <Link href="/investors/questions" className="btn btn-secondary">
-              What is not in the numbers?
-            </Link>
             <Link href="/investors/enquiry" className="btn btn-primary">
               Ask for real fleet figures
             </Link>

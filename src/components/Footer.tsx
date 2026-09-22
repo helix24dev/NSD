@@ -42,9 +42,6 @@ export default function Footer() {
                 <Link href="/investors/calculator">Returns calculator</Link>
               </li>
               <li>
-                <Link href="/investors/questions">Your questions</Link>
-              </li>
-              <li>
                 <Link href="/investors/how-it-works">How it works</Link>
               </li>
               <li>

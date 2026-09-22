@@ -258,6 +258,8 @@ html[data-js] .reveal.is-in{opacity:1;transform:none;}
 .logo{display:inline-flex;align-items:center;justify-content:center;height:72px;min-width:190px;padding:0 28px;border-radius:18px;background:#fff;border:1px solid var(--line);}
 .logo img{width:auto;max-width:150px;}
 .logo .wm{font-weight:700;font-size:24px;letter-spacing:-.02em;}
+.logo--noon{background:#fce819;border-color:#fce819;padding:0;overflow:hidden;}
+.logo--noon img{height:100% !important;width:100%;max-width:none;object-fit:cover;}
 .logo--keeta{background:#ffd200;border-color:#ffd200;}
 .logo--keeta .wm{color:#111;}
 .logos--grid{display:grid;grid-template-columns:repeat(4,1fr);}

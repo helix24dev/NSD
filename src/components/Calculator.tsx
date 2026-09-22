@@ -19,9 +19,9 @@ const fields: Field[] = [
   {
     id: "fleet",
     label: "Number of bikes funded",
-    min: 10,
-    max: 300,
-    step: 5,
+    min: 1,
+    max: 200,
+    step: 1,
     note: "One trained rider and one maintained bike per unit.",
     format: (v) => String(v),
   },
@@ -55,7 +55,7 @@ const fields: Field[] = [
 ];
 
 export default function Calculator() {
-  const [v, setV] = useState({ fleet: 60, cost: 9500, rev: 1100, term: 36 });
+  const [v, setV] = useState({ fleet: 5, cost: 12000, rev: 900, term: 24 });
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const out = useMemo(() => {
