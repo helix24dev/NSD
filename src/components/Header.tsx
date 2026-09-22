@@ -11,15 +11,9 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 24);
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? Math.min(1, y / max) : 0);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -39,38 +33,19 @@ export default function Header() {
   return (
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
-        <div
-          className={styles.progress}
-          style={{ transform: `scaleX(${progress})` }}
-          aria-hidden
-        />
         <div className={`wrap ${styles.bar}`}>
-          <Link
-            href="/"
-            className={styles.brand}
-            aria-label="Non-Stop Delivery — home"
-          >
-            <Image
-              src="/brand/nsd-mark.png"
-              alt="NSD"
-              width={62}
-              height={22}
-              priority
-            />
+          <Link href="/" className={styles.brand} aria-label="Non Stop Delivery — home">
+            <Image src="/brand/nsd-mark-dark.png" alt="NSD" width={82} height={29} priority />
+            <span>Non Stop Delivery</span>
           </Link>
 
-          <nav className={styles.nav} aria-label="Primary">
+          <nav className={styles.nav} aria-label="Main">
             <ul>
               {nav.map((item) => {
-                const active =
-                  pathname === item.href ||
-                  pathname.startsWith(item.href + "/");
+                const active = pathname === item.href || pathname.startsWith(item.href + "/");
                 return (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={active ? styles.active : ""}
-                    >
+                    <Link href={item.href} className={active ? styles.active : ""}>
                       {item.label}
                     </Link>
                   </li>
@@ -80,8 +55,8 @@ export default function Header() {
           </nav>
 
           <div className={styles.right}>
-            <Link href="/investors#enquiry" className={styles.cta}>
-              Investor enquiry →
+            <Link href="/investors#enquiry" className={`btn btn-primary ${styles.cta}`}>
+              Investor enquiry
             </Link>
             <button
               type="button"
@@ -90,34 +65,27 @@ export default function Header() {
               aria-controls="mobile-nav"
               onClick={() => setOpen((v) => !v)}
             >
-              {open ? "Close" : "Menu"}
+              <span className={styles.burgerLines} data-open={open} aria-hidden />
+              <span className={styles.srOnly}>{open ? "Close menu" : "Open menu"}</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Rendered outside <header>: its backdrop-filter would otherwise become the containing block for this fixed panel. */}
-      <div
-        id="mobile-nav"
-        className={`${styles.mobile} ${open ? styles.mobileOpen : ""}`}
-        aria-hidden={!open}
-      >
+      {/* Outside <header>: its backdrop-filter would otherwise be the containing block for this fixed panel. */}
+      <div id="mobile-nav" className={`${styles.mobile} ${open ? styles.mobileOpen : ""}`} aria-hidden={!open}>
         <ul>
           <li>
-            <Link href="/">
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           {nav.map((item) => (
             <li key={item.href}>
-              <Link href={item.href}>
-                {item.label}
-              </Link>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
-        <Link href="/investors#enquiry" className="btn btn-solid">
-          Investor enquiry →
+        <Link href="/investors#enquiry" className="btn btn-primary">
+          Investor enquiry
         </Link>
       </div>
     </>

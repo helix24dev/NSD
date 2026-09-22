@@ -1,14 +1,14 @@
-import { site } from "@/lib/site";
+import { site, fleetColors } from "@/lib/site";
 
 export default function Marquee() {
-  const items = [...site.partners, ...site.partners];
+  const items = [...site.apps, ...site.apps];
   return (
-    <div className="marquee" aria-label="Contracted fleet and workforce partner to Talabat, Noon, Keeta and Amazon">
+    <div className="marquee" aria-label={`Our riders deliver for ${site.apps.join(", ")}`}>
       <div className="marquee-track">
         {items.map((name, i) => (
-          <div className="marquee-item" key={i} aria-hidden={i >= site.partners.length}>
-            <span className="name">{name}</span>
-            <span className="sep">Contracted partner</span>
+          <div className="marquee-item" key={i} aria-hidden={i >= site.apps.length}>
+            <i style={{ background: fleetColors[i % fleetColors.length] }} />
+            {name}
           </div>
         ))}
       </div>

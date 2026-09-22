@@ -18,38 +18,38 @@ type Field = {
 const fields: Field[] = [
   {
     id: "fleet",
-    label: "01 · Fleet size, units funded",
+    label: "Number of bikes funded",
     min: 10,
     max: 300,
     step: 5,
-    note: "One rider, one maintained bike, per unit.",
+    note: "One trained rider and one maintained bike per unit.",
     format: (v) => String(v),
   },
   {
     id: "cost",
-    label: "02 · Investment per unit",
+    label: "Investment per bike",
     min: 5000,
     max: 15000,
     step: 250,
-    note: "Illustrative: one-time bike, gear, onboarding and training.",
+    note: "Example figure: bike, gear, onboarding and training.",
     format: fmtAED,
   },
   {
     id: "rev",
-    label: "03 · Net monthly return per unit",
+    label: "Net monthly return per bike",
     min: 400,
     max: 2200,
     step: 50,
-    note: "Illustrative: net income per unit, after NSD's share.",
+    note: "Example figure: what you receive per bike each month, after operating costs.",
     format: fmtAED,
   },
   {
     id: "term",
-    label: "04 · Contract / holding term",
+    label: "Investment term",
     min: 12,
     max: 60,
     step: 6,
-    note: "Platform contracts typically run multi-year.",
+    note: "How long the investment runs.",
     format: (v) => `${v} mo`,
   },
 ];
@@ -98,7 +98,7 @@ export default function Calculator() {
       const zeroY = yFor(0);
 
       ctx.setLineDash([3, 4]);
-      ctx.strokeStyle = "rgba(255,255,255,.35)";
+      ctx.strokeStyle = "rgba(12,29,54,.25)";
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(pad.l, zeroY);
@@ -129,7 +129,7 @@ export default function Calculator() {
       if (paybackMonths <= term) {
         ctx.beginPath();
         ctx.arc(xFor(paybackMonths), zeroY, 4, 0, Math.PI * 2);
-        ctx.fillStyle = "#081120";
+        ctx.fillStyle = "#ffffff";
         ctx.fill();
         ctx.lineWidth = 1.5;
         ctx.strokeStyle = "#f26622";
@@ -140,8 +140,8 @@ export default function Calculator() {
       ctx.arc(xFor(term), yFor(points[term]), 3.5, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.font = "11px IBM Plex Mono, monospace";
-      ctx.fillStyle = "rgba(248,247,249,.5)";
+      ctx.font = "600 11px Poppins, sans-serif";
+      ctx.fillStyle = "rgba(12,29,54,.5)";
       ctx.textAlign = "left";
       ctx.fillText("M0", pad.l, h - 6);
       ctx.textAlign = "right";
@@ -157,12 +157,12 @@ export default function Calculator() {
     <div className={styles.ticket}>
       <div className={styles.grid}>
         <div className={styles.inputs}>
-          <div className={styles.title}>Inputs</div>
+          <div className={styles.title}>Your inputs</div>
           {fields.map((f) => (
             <div className={styles.field} key={f.id}>
               <div className={styles.fieldTop}>
                 <label htmlFor={`calc-${f.id}`}>{f.label}</label>
-                <span className={`${styles.val} mono tnum`}>{f.format(v[f.id])}</span>
+                <span className={`${styles.val} tnum`}>{f.format(v[f.id])}</span>
               </div>
               <input
                 id={`calc-${f.id}`}
@@ -185,12 +185,12 @@ export default function Calculator() {
             <Out label="Total investment" value={fmtAED(out.investment)} />
             <Out label="Monthly return" value={fmtAED(out.monthly)} accent />
             <Out
-              label="Payback period"
+              label="Money back in"
               value={(isFinite(out.payback) ? out.payback.toFixed(1) : "—") + " mo"}
               sub={`of a ${v.term}-month term`}
             />
             <Out
-              label="Net profit at term end"
+              label="Profit at the end of the term"
               value={fmtAED(out.profit)}
               sub={`≈ ${out.roi.toFixed(0)}% total ROI`}
               accent
@@ -204,7 +204,7 @@ export default function Calculator() {
                 Cumulative return
               </span>
               <span>
-                <i style={{ background: "rgba(255,255,255,.4)" }} />
+                <i style={{ background: "rgba(12,29,54,.3)" }} />
                 Break-even
               </span>
             </div>
@@ -219,8 +219,8 @@ function Out({ label, value, sub, accent }: { label: string; value: string; sub?
   return (
     <div className={styles.outCell}>
       <div className={styles.lab}>{label}</div>
-      <div className={`${styles.v} ${accent ? styles.accent : ""} mono tnum`}>{value}</div>
-      {sub && <div className={`${styles.sub} mono`}>{sub}</div>}
+      <div className={`${styles.v} ${accent ? styles.accent : ""} tnum`}>{value}</div>
+      {sub && <div className={styles.sub}>{sub}</div>}
     </div>
   );
 }

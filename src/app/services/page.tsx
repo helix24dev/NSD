@@ -1,44 +1,45 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import Idx from "@/components/Idx";
-import RouteDiagram from "@/components/RouteDiagram";
+import Eyebrow from "@/components/Eyebrow";
+import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
+import { IconRider, IconBike, IconRoute, IconReport, IconWrench, IconClock, IconBag } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Fleet & Workforce",
+  title: "What we do — delivery riders and bikes",
   description:
-    "NSD supplies contracted rider and motorbike units to UAE delivery platforms — recruitment, training, fleet maintenance, deployment and MIS/CRM reporting.",
+    "Non Stop Delivery hires and trains delivery riders, supplies and maintains motorbikes, and keeps both on the road for the UAE's leading delivery apps.",
 };
 
 const services = [
   {
-    title: "Rider recruitment & training",
-    lede: "A trained, compliant rider for every unit.",
-    body:
-      "We source and onboard riders, train them to each platform's operating standards, and keep them supported on shift. Platforms get capacity that is ready on day one.",
-    points: ["Sourcing & onboarding", "Platform SOP training", "Documentation & compliance", "Shift scheduling & support"],
+    Icon: IconRider,
+    title: "Hiring and training riders",
+    lede: "A trained, ready rider for every bike.",
+    body: "We find the riders, sort their paperwork, train them to each app's standards and support them on every shift — so they're ready from day one.",
+    points: ["Hiring and onboarding", "Training for each app", "Documents and compliance", "Shift planning and support"],
   },
   {
-    title: "Motorbike fleet & maintenance",
-    lede: "A maintained bike, matched to every rider.",
-    body:
-      "NSD operates the motorbike fleet behind each unit — servicing, gear and replacement — so vehicle downtime doesn't become platform downtime.",
-    points: ["Fleet ownership & operation", "Scheduled servicing", "Gear, kit & branding", "Replacement & downtime cover"],
+    Icon: IconBike,
+    title: "Bikes and maintenance",
+    lede: "A well-kept motorbike for every rider.",
+    body: "We own the bikes, service them on schedule, supply gear and safety kit, and swap in a replacement quickly if anything goes wrong.",
+    points: ["Bikes owned by us", "Regular servicing", "Gear and safety kit", "Fast replacements"],
   },
   {
-    title: "Deployment & operations",
-    lede: "Units deployed to the partner's app, at the partner's pace.",
-    body:
-      "Riders work the platform's own app. NSD manages the fleet and workforce layer underneath — attendance, utilisation and exceptions — so partners can scale demand without building supply.",
-    points: ["Contracted per-unit supply", "Utilisation management", "Exceptions handling", "Scale-up on demand"],
+    Icon: IconRoute,
+    title: "Keeping riders on the road",
+    lede: "Riders on the app, when and where they're needed.",
+    body: "Riders take orders on the app itself. We handle attendance, coverage and day-to-day issues, so apps can grow demand without building their own fleet.",
+    points: ["Riders work on the app", "Coverage by zone and shift", "Issues handled fast", "Scale up when needed"],
   },
   {
-    title: "Reporting through MIS/CRM",
-    lede: "Visibility into every deployed unit.",
-    body:
-      "Regular reporting through NSD's MIS/CRM systems gives partners and investors a clear view of deployed units and performance, with a defined cadence and KPI set.",
-    points: ["Deployed-unit reporting", "Performance KPIs", "Financial reporting", "Exceptions reporting"],
+    Icon: IconReport,
+    title: "Simple, regular reporting",
+    lede: "You always know what's on the road.",
+    body: "Apps and investors get clear reports on riders, bikes, hours and income — on a set schedule, in plain language.",
+    points: ["Bikes and riders on the road", "Hours and performance", "Income and costs", "Anything that needs attention"],
   },
 ];
 
@@ -46,34 +47,37 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        crumb="Fleet & Workforce"
+        crumb="What we do"
         title={
           <>
-            Riders and bikes, <em>supplied under contract.</em>
+            Riders and bikes, <em>ready to deliver.</em>
           </>
         }
-        lede="One unit is one trained rider paired with one maintained motorbike. NSD recruits, trains, equips, deploys and reports — platforms simply plug capacity into their app."
+        lede="One trained rider, one well-maintained motorbike. We hire, train, equip and look after both — delivery apps simply add the capacity to their app."
       >
-        <div style={{ marginTop: 56 }}>
-          <RouteDiagram />
+        <div style={{ marginTop: 40 }} className="reveal">
+          <Fleet compact />
         </div>
       </PageHero>
 
-      <section className="section section--paper" id="services">
+      <section className="section" id="services">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="Fleet & workforce" />
-              <h2 className="h-lg reveal">Four services. One operating layer.</h2>
+              <Eyebrow>What we do</Eyebrow>
+              <h2 className="h-lg reveal">Everything a delivery app needs from a fleet.</h2>
             </div>
           </div>
           <div className="card-grid card-grid--2">
             {services.map((s, i) => (
               <div className="card reveal" data-delay={i * 80} key={s.title}>
+                <div className="icon">
+                  <s.Icon />
+                </div>
                 <h4>{s.title}</h4>
-                <p style={{ fontWeight: 600, color: "var(--ink)", marginBottom: 10 }}>{s.lede}</p>
+                <p style={{ fontWeight: 600, color: "var(--ink)", marginBottom: 8 }}>{s.lede}</p>
                 <p>{s.body}</p>
-                <ul>
+                <ul className="checks">
                   {s.points.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
@@ -84,81 +88,83 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section section--navy-mid section--grain" id="unit">
+      <section className="section section--soft" id="the-unit">
         <div className="wrap">
-          <div className="two">
+          <div className="two two--top">
             <div>
-              <Idx label="The unit" />
+              <Eyebrow>One rider, one bike</Eyebrow>
               <h2 className="h-lg reveal">
-                One rider. One bike. <em>One contracted unit.</em>
+                Everything we do comes down to <em>one rider and one bike.</em>
               </h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
-                Everything NSD does resolves to the unit — the thing platforms contract for and investors can
-                fund.
+                That&rsquo;s the unit the apps ask for and the unit investors can fund. Here&rsquo;s what goes into
+                each one.
               </p>
             </div>
-            <div className="reveal" data-delay="140">
+            <div className="points reveal" data-delay="140">
               {[
-                ["Rider", "Recruited, trained to platform SOPs, documented and supported on shift."],
-                ["Bike", "Motorbike owned and maintained by NSD, with gear and downtime cover."],
-                ["Deployment", "Assigned to a partner platform and working the partner's app."],
-                ["Revenue", "Each deployed unit earns contracted, recurring income."],
-              ].map(([t, d]) => (
-                <div className="handoff-item" key={t}>
-                  <div className="hn"><span className="mk" /></div>
-                  <div>
-                    <h4>{t}</h4>
-                    <p>{d}</p>
+                [IconRider, "The rider", "Hired, trained for the app, documented and supported on every shift."],
+                [IconWrench, "The bike", "Owned and serviced by us, with gear, kit and quick replacements."],
+                [IconClock, "The shifts", "Assigned to an app and a zone, working the hours the app needs."],
+                [IconBag, "The income", "Every bike on the road earns a steady amount each month."],
+              ].map(([Icon, t, d]) => {
+                const I = Icon as typeof IconBag;
+                return (
+                  <div className="point" key={t as string}>
+                    <div className="dot">
+                      <I />
+                    </div>
+                    <div>
+                      <h4>{t as string}</h4>
+                      <p>{d as string}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--paper" id="for-platforms">
+      <section className="section" id="for-apps">
         <div className="wrap">
-          <div className="two two--center">
+          <div className="two">
             <div>
-              <Idx label="For platforms" />
-              <h2 className="h-lg reveal">Need capacity in a new zone or for a peak?</h2>
+              <Eyebrow>For delivery apps</Eyebrow>
+              <h2 className="h-lg reveal">Need more riders in a new zone, or for a busy season?</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
-                NSD already supplies Talabat, Noon, Keeta and Amazon. Tell us the zone, the volume and the
-                start date.
+                Our riders already deliver for Talabat, Noon, Keeta and Amazon. Tell us the zone, how many riders
+                you need and when — we&rsquo;ll take it from there.
               </p>
               <div className="btn-row reveal" data-delay="160">
-                <Link href="/contact" className="btn btn-solid">
-                  Request capacity →
+                <Link href="/contact" className="btn btn-primary">
+                  Ask for riders
                 </Link>
-                <Link href="/partners" className="btn btn-line">
-                  Current partners
+                <Link href="/delivery-apps" className="btn btn-secondary">
+                  Who we ride for
                 </Link>
               </div>
             </div>
-            <div className="reveal" data-delay="140">
-              {[
-                ["Scope the requirement", "Zones, unit count, shift pattern and platform SOPs."],
-                ["Agree the contract", "Per-unit terms under UAE law, with reporting cadence defined."],
-                ["Deploy and report", "Units go live on the platform's app; NSD reports through MIS/CRM."],
-              ].map(([t, d]) => (
-                <div className="mk-point" key={t}>
-                  <div className="mk" />
-                  <div>
-                    <h4>{t}</h4>
-                    <p>{d}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="card-grid reveal" data-delay="140" style={{ gridTemplateColumns: "1fr" }}>
+              <div className="card">
+                <h4>What you get</h4>
+                <ul className="checks">
+                  <li>Riders who are hired, trained and documented</li>
+                  <li>Motorbikes we own and maintain</li>
+                  <li>Riders on your app, in your zones, on your schedule</li>
+                  <li>Clear reporting on a set schedule</li>
+                  <li>Everything agreed in writing under UAE law</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <CtaBand
-        title="Scale supply with NSD — or fund it."
-        primary={{ href: "/contact", label: "Talk to NSD →" }}
-        secondary={{ href: "/investors", label: "Investor overview" }}
+        title="More riders for your app — or a fleet to invest in."
+        primary={{ href: "/contact", label: "Talk to us" }}
+        secondary={{ href: "/investors", label: "For investors" }}
       />
     </>
   );

@@ -1,28 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import Idx from "@/components/Idx";
+import Eyebrow from "@/components/Eyebrow";
 import Calculator from "@/components/Calculator";
 import LeadForm from "@/components/LeadForm";
-import StatLedger from "@/components/StatLedger";
+import { IconShield, IconReport, IconGrowth, IconBag, IconCoins } from "@/components/Icons";
 import { site } from "@/lib/site";
 import styles from "./investors.module.css";
 
 export const metadata: Metadata = {
-  title: "Investors",
+  title: "Invest in a UAE delivery fleet",
   description:
-    "Investor overview for Non-Stop Delivery: the investment case, an interactive fleet-to-returns model, due-diligence checklist and a court-attested transaction process.",
+    "Fund delivery bikes and riders with Non Stop Delivery and earn a monthly return from every bike on the road. Try the returns calculator and see how it works.",
 };
 
-const qa = [
-  ["Q-01", "Who owns the bikes?", "Whether the investor, NSD or another entity holds legal title to the fleet assets is confirmed in the transaction documents."],
-  ["Q-02", "How is the investor paid?", "The revenue-share, distribution or other economic mechanism is documented in the definitive agreement."],
-  ["Q-03", "What if a platform contract changes?", "Exposure, termination provisions, replacement capacity and the resulting economics are documented."],
-  ["Q-04", "What happens at the end of the term?", "Asset ownership, residual value, renewal and exit mechanics are defined upfront."],
-  ["Q-05", "What costs sit outside the model?", "Maintenance, insurance, registration, recruitment and downtime are set out in a clear cost schedule."],
-  ["Q-06", "What reporting does the investor receive?", "Cadence, KPIs, financial reporting, fleet deployment and exceptions reporting are specified."],
-  ["Q-07", "What documents are available?", "Company profile, financials, agreements and fleet economics are available during diligence."],
-  ["Q-08", "What are the key operating risks?", "Platform concentration, rider attrition, vehicle downtime and contract renewal are disclosed and addressed."],
+const questions = [
+  ["Who owns the bikes?", "Whether you, Non Stop Delivery or another party holds title to the bikes is set out clearly in the signed documents."],
+  ["How do I get paid?", "Your share of what each bike earns is paid on a set schedule. The exact terms are written into the agreement."],
+  ["What if an app needs fewer riders?", "We ride for four apps, so riders can move between them. What happens in that case is written down before you invest."],
+  ["What happens at the end of the term?", "Who keeps the bikes, what they're worth, and whether you renew or exit — all agreed up front."],
+  ["What costs are not in the calculator?", "Maintenance, insurance, registration, hiring and downtime are listed in a clear cost schedule you see before signing."],
+  ["What reporting do I receive?", "Bikes on the road, income, costs and anything that needs attention — sent to you on a regular schedule."],
+  ["What can I review before investing?", "Company profile, financials, agreements and the numbers behind the bikes are all available on request."],
+  ["What are the main risks?", "Depending on a few apps, rider turnover, bike downtime and renewals — we explain each one and how we manage it."],
+];
+
+const steps = [
+  ["Review the terms", "Go through the plan, the number of bikes and the expected returns with us."],
+  ["Sign and attest", "A signed memorandum, attested under UAE law."],
+  ["Agree the details", "Your investment, your share of income and how we report to you — in writing."],
+  ["Watch it work", "Bikes go on the road and you receive regular reports and returns."],
 ];
 
 export default function InvestorsPage() {
@@ -32,141 +39,161 @@ export default function InvestorsPage() {
         crumb="Investors"
         title={
           <>
-            Fund units. <em>Earn per unit deployed.</em>
+            Fund bikes on the road. <em>Earn from every one.</em>
           </>
         }
-        lede="NSD supplies trained riders and maintained bikes under contract to Talabat, Noon, Keeta and Amazon, and earns recurring revenue per unit deployed. This page sets out the case, the model and what you should be able to verify."
+        lede="Non Stop Delivery supplies riders and bikes to the UAE's leading delivery apps. Investors fund the bikes; every bike on the road earns a monthly income. This page explains how it works, what you can expect and what you should check."
       >
         <nav className={`${styles.subnav} reveal`} data-delay="200" aria-label="On this page">
-          <a href="#case">The case</a>
-          <a href="#model">Returns model</a>
-          <a href="#diligence">Due diligence</a>
-          <a href="#process">Process</a>
-          <a href="#enquiry">Request overview</a>
+          <a href="#why">Why invest</a>
+          <a href="#calculator">Returns calculator</a>
+          <a href="#questions">Your questions</a>
+          <a href="#steps">How it works</a>
+          <a href="#enquiry">Get in touch</a>
         </nav>
-        <div style={{ marginTop: 56 }}>
-          <StatLedger />
-        </div>
       </PageHero>
 
-      {/* ---------- CASE ---------- */}
-      <section className="section section--navy-mid section--grain" id="case">
+      {/* ---------- WHY INVEST (bento) ---------- */}
+      <section className="section section--soft" id="why">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="The investment case" />
-              <h2 className="h-lg reveal">Four operating pillars.</h2>
+              <Eyebrow>Why invest</Eyebrow>
+              <h2 className="h-lg reveal">A simple idea, backed by real demand.</h2>
               <p className="lede reveal" data-delay="100">
-                Built on evidence an investor can verify, not broad claims.
+                You fund the bikes and riders. We put them to work for the apps. You earn from every bike, every
+                month.
               </p>
             </div>
-            <Link href="/about#facts" className="arrow-link reveal">
-              Company facts →
+            <Link href="/about#facts" className="text-link reveal">
+              About the company →
             </Link>
           </div>
-          <div className="reveal">
-            {[
-              ["W-01", "Platform partnerships", "Long-term contracts with Talabat, Noon, Keeta and Amazon anchor demand. Relationship scope and contract evidence are available for review in diligence."],
-              ["W-02", "Strong UAE legal framework", "Agreements follow UAE law, including court-attested MOUs. Investor rights and remedies are set out in the transaction documents."],
-              ["W-03", "Transparent reporting", "Regular reporting through NSD's MIS/CRM systems gives visibility into deployed units and performance."],
-              ["W-04", "Scalable fleet economics", "More bikes and riders deployed can increase contracted income — the calculator below makes the unit economics explicit."],
-            ].map(([n, t, d]) => (
-              <div className="case-row case-row--plain" key={n}>
-                <div className="ct">
-                  <h4>{t}</h4>
-                  <p>{d}</p>
-                </div>
+
+          <div className="bento">
+            <div className="tile tile-navy b-8 r-2 reveal">
+              <div className="small">How you earn</div>
+              <h3>Every rider-and-bike unit on the road earns a steady monthly income — and you receive a share of it.</h3>
+              <p>
+                The apps keep our riders busy. We keep the riders and bikes on the road. For the length of your
+                term, each bike you fund pays you back month after month.
+              </p>
+              <Link href="#calculator" className="btn btn-primary">
+                See the numbers
+              </Link>
+            </div>
+            <div className="tile tile-orange b-4 reveal" data-delay="80">
+              <div className="small">Demand</div>
+              <div className="big">4</div>
+              <p>leading UAE delivery apps our riders deliver for — Talabat, Noon, Keeta and Amazon</p>
+            </div>
+            <div className="tile tile-white b-4 reveal" data-delay="120">
+              <div className="small">Experience</div>
+              <div className="big">10+</div>
+              <p>years on UAE roads, 5+ running delivery fleets</p>
+            </div>
+            <div className="tile tile-white b-4 reveal" data-delay="160">
+              <div className="card-icon">
+                <IconShield />
               </div>
-            ))}
+              <h4 className={styles.tileH4}>Backed by UAE law</h4>
+              <p>Signed, attested agreements set out what you own, what you receive and what happens at the end.</p>
+            </div>
+            <div className="tile tile-white b-4 reveal" data-delay="200">
+              <div className="card-icon">
+                <IconReport />
+              </div>
+              <h4 className={styles.tileH4}>Regular reporting</h4>
+              <p>Bikes on the road, income and costs, reported to you on a set schedule in plain language.</p>
+            </div>
+            <div className="tile tile-white b-4 reveal" data-delay="240">
+              <div className="card-icon">
+                <IconGrowth />
+              </div>
+              <h4 className={styles.tileH4}>Grows with demand</h4>
+              <p>More bikes on the road means more income. The apps keep growing, and so does the need for riders.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ---------- MODEL ---------- */}
-      <section className="section section--navy section--grain section--grid" id="model">
+      {/* ---------- CALCULATOR ---------- */}
+      <section className="section" id="calculator">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="Returns model" />
-              <h2 className="h-lg reveal">Fleet-to-Returns Calculator</h2>
+              <Eyebrow>Returns calculator</Eyebrow>
+              <h2 className="h-lg reveal">See what a fleet could earn.</h2>
               <p className="lede reveal" data-delay="100">
-                Model an investment across fleet size, unit cost, monthly return and term — and see the estimated outcome.
+                Change the number of bikes, the cost per bike, the monthly return and the term to see an estimate.
               </p>
             </div>
           </div>
           <div className="reveal" data-delay="120">
             <Calculator />
           </div>
-          <div className="note">
-            <b>NOTE —</b>
-            <span>
-              This is an illustrative straight-line model based only on the entered investment, return and term.
-              It assumes the entered return stays constant and does not separately model downtime, taxes,
-              financing, residual asset value, platform changes or rider attrition. It is not a forecast,
-              guarantee, offer or investment advice — consult your own advisors before committing capital.
-            </span>
-          </div>
+          <p className="note">
+            This calculator is for illustration only. It uses the numbers you enter, assumes the monthly return
+            stays the same, and does not separately include downtime, taxes, financing, the bikes&rsquo; resale
+            value, changes at the apps or rider turnover. It is not a forecast, a guarantee, an offer or
+            financial advice — please speak to your own advisers before investing.
+          </p>
         </div>
       </section>
 
-      {/* ---------- DILIGENCE ---------- */}
-      <section className="section section--paper" id="diligence">
+      {/* ---------- QUESTIONS ---------- */}
+      <section className="section section--soft" id="questions">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="Due diligence" />
-              <h2 className="h-lg reveal">What an investor should be able to verify.</h2>
+              <Eyebrow>Your questions</Eyebrow>
+              <h2 className="h-lg reveal">The things you should ask before investing.</h2>
               <p className="lede reveal" data-delay="100">
-                The questions NSD answers before asking for capital.
+                Straight answers to the questions we hear most. Everything here is also written into the documents.
               </p>
             </div>
           </div>
-          <div className="qa-grid reveal">
-            {qa.map(([n, q, a]) => (
-              <div className="qa-item" key={n}>
+          <div className="faq reveal">
+            {questions.map(([q, a]) => (
+              <div className="faq-item" key={q}>
                 <h4>{q}</h4>
                 <p>{a}</p>
               </div>
             ))}
           </div>
 
-          <div className="card-grid card-grid--2 reveal" style={{ marginTop: 48 }}>
+          <div className="card-grid card-grid--2 reveal" style={{ marginTop: 20 }}>
             <div className="card">
-              <div className="cn">Operating detail</div>
-              <p>
-                Fleet count, rider count, utilisation and monthly deployed units are available on request,
-                verified against NSD&rsquo;s operating records.
-              </p>
+              <div className="icon">
+                <IconBag />
+              </div>
+              <h4>The fleet, in detail</h4>
+              <p>Number of bikes, number of riders, hours on the road and monthly income — available on request and checked against our records.</p>
             </div>
             <div className="card">
-              <div className="cn">Platform detail</div>
-              <p>
-                Relationship start dates, active status and contracted scope for each platform are available
-                for review during diligence.
-              </p>
+              <div className="icon">
+                <IconCoins />
+              </div>
+              <h4>The apps, in detail</h4>
+              <p>How long we&rsquo;ve ridden for each app, how many riders are on each, and how the work is arranged — available when you get in touch.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---------- PROCESS ---------- */}
-      <section className="section section--paper-2" id="process">
+      {/* ---------- STEPS ---------- */}
+      <section className="section" id="steps">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="Transaction process" />
-              <h2 className="h-lg reveal">A structured, four-stage process.</h2>
+              <Eyebrow>How it works</Eyebrow>
+              <h2 className="h-lg reveal">From first conversation to bikes on the road.</h2>
             </div>
           </div>
-          <div className="stamp-row">
-            {[
-              ["Contract review", "Terms, fleet scope and expected returns."],
-              ["Court-attested MOU", "Signed and attested under UAE law."],
-              ["Comprehensive agreement", "Capital, revenue share and reporting terms."],
-              ["Ongoing monitoring", "Tracked through NSD's MIS/CRM systems."],
-            ].map(([t, d], i) => (
-              <div className="stamp reveal" data-delay={i * 90} key={t}>
-                <div className="ring">0{i + 1}</div>
+          <div className="timeline">
+            {steps.map(([t, d], i) => (
+              <div className="tl reveal" data-delay={i * 90} key={t}>
+                <div className="mark" />
                 <h4>{t}</h4>
                 <p>{d}</p>
               </div>
@@ -176,38 +203,33 @@ export default function InvestorsPage() {
       </section>
 
       {/* ---------- ENQUIRY ---------- */}
-      <section className="section section--navy section--grain" id="enquiry">
+      <section className="section section--soft" id="enquiry">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="Investor enquiry" />
-              <h2 className="h-lg reveal">Request the investor overview.</h2>
+              <Eyebrow>Get in touch</Eyebrow>
+              <h2 className="h-lg reveal">Ask for the investor pack.</h2>
               <p className="lede reveal" data-delay="100">
-                NSD&rsquo;s team will follow up directly — no obligation.
+                Leave your details and our team will get back to you directly. No obligation.
               </p>
             </div>
           </div>
           <div className={styles.contactGrid}>
-            <div className="reveal">
+            <div className="card reveal">
               <LeadForm variant="investor" />
             </div>
-            <div className="label-box reveal" data-delay="120">
-              <div className="to">Head office</div>
-              <div className="addr">
+            <div className="contact-box reveal" data-delay="120">
+              <div className="small">Non Stop Delivery</div>
+              <div className="lines">
                 {site.legal}
                 <br />
-                {site.address[0]}
-                <br />
-                {site.address[1]}
+                {site.location}
                 <br />
                 <br />
                 <a href={site.phoneHref}>{site.phone}</a>
                 <br />
                 <a href={`mailto:${site.email}`}>{site.email}</a>
-                <br />
-                <a href={site.url}>www.nonstopdelivery.com</a>
               </div>
-              <div className="seal">Investor line</div>
             </div>
           </div>
         </div>

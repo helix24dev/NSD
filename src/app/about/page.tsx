@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import Idx from "@/components/Idx";
-import StatLedger from "@/components/StatLedger";
+import Eyebrow from "@/components/Eyebrow";
+import Stats from "@/components/Stats";
+import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
+import { IconBag, IconShield, IconReport, IconGrowth } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Non Stop Delivery LLC — a Dubai-based fleet and workforce operator with 10+ years in UAE logistics and 5+ years of dedicated 3PL expertise.",
+    "Non Stop Delivery is a UAE delivery fleet company with over 10 years on the road, supplying trained riders and motorbikes to the country's leading delivery apps.",
 };
+
+const pillars = [
+  { Icon: IconBag, title: "Steady demand from the apps", text: "Talabat, Noon, Keeta and Amazon keep our riders busy every day, and they need more riders as they grow." },
+  { Icon: IconShield, title: "Clear agreements under UAE law", text: "Everything is written down and attested in the UAE, so everyone knows exactly where they stand." },
+  { Icon: IconReport, title: "Honest, regular reporting", text: "Bikes on the road, income earned and any issues are reported clearly and on time." },
+  { Icon: IconGrowth, title: "Built to grow", text: "More riders and bikes on the road means more income — the model scales as demand does." },
+];
 
 export default function AboutPage() {
   return (
@@ -20,150 +28,119 @@ export default function AboutPage() {
         crumb="About"
         title={
           <>
-            Ten years on UAE roads. <em>Built for platforms.</em>
+            Ten years on UAE roads. <em>Built for delivery apps.</em>
           </>
         }
-        lede="Non Stop Delivery LLC is a Dubai-headquartered fleet and workforce operator. We supply the riders and bikes that keep the UAE's largest delivery platforms moving — and we don't compete with them."
+        lede="Non Stop Delivery LLC is a UAE fleet company. We supply the riders and bikes that keep the country's biggest delivery apps moving — we don't run our own app, and we don't compete with theirs."
       >
-        <div style={{ marginTop: 56 }}>
-          <StatLedger />
+        <div style={{ marginTop: 48 }}>
+          <Stats />
         </div>
       </PageHero>
 
-      <section className="section section--paper">
+      <section className="section">
         <div className="wrap">
-          <div className="two">
+          <div className="two two--top">
             <div>
-              <Idx label="Who we are" />
-              <h2 className="h-lg reveal">A supply partner, one layer back from the customer.</h2>
+              <Eyebrow>Who we are</Eyebrow>
+              <h2 className="h-lg reveal">The team behind the riders.</h2>
             </div>
-            <div className="copy reveal" data-delay="120">
+            <div className="copy reveal" data-delay="100">
               <p>
-                NSD has operated in UAE logistics for more than a decade, with the last five-plus years dedicated
-                to third-party fleet and workforce supply. Today we are a contracted partner to Talabat, Noon,
-                Keeta and Amazon.
+                We&rsquo;ve worked in UAE logistics for more than ten years, and for the last five-plus we&rsquo;ve
+                focused on one thing: supplying delivery riders and motorbikes to the apps people use every day.
               </p>
               <p>
-                Our model is deliberately narrow. Platforms own the customer, the app and the order. NSD owns the
-                hard operational layer underneath: recruiting and training riders, running and maintaining a
-                motorbike fleet, and keeping units deployed reliably, shift after shift.
+                Our job is simple to explain and hard to do well. We hire and train riders, we buy and look after
+                the bikes, and we keep both on the road shift after shift. The apps handle the customer and the
+                order; we handle everything that gets the rider to the door.
               </p>
               <p>
-                That focus is what lets us scale supply as fast as our partners scale demand — and what turns
-                every deployed unit into contracted, recurring revenue.
+                That focus is why the apps keep asking us for more riders — and why every bike we add to the road
+                earns a steady monthly income.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--paper-2" id="facts">
+      <section className="section section--soft" id="facts">
         <div className="wrap">
-          <div className="sec-head">
+          <div className="two two--top">
             <div>
-              <Idx label="Company facts" />
-              <h2 className="h-lg reveal">At a glance.</h2>
-              <p className="lede reveal" data-delay="100">
-                A concise operating profile for initial review. Further detail is available during diligence.
+              <Eyebrow>At a glance</Eyebrow>
+              <h2 className="h-lg reveal">The company in brief.</h2>
+              <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
+                A quick profile. More detail is available when you get in touch.
               </p>
             </div>
-          </div>
-          <div className="fact-grid reveal">
-            <div className="fact-col">
-              <div className="fact-row"><span>Legal entity</span><b>{site.legal}</b></div>
-              <div className="fact-row"><span>Sector</span><b>Logistics — 3PL fleet &amp; workforce</b></div>
-              <div className="fact-row"><span>Headquarters</span><b>Al Quoz 2, Dubai, UAE</b></div>
-              <div className="fact-row"><span>Operating history</span><b>10+ years in UAE logistics</b></div>
-              <div className="fact-row"><span>3PL specialisation</span><b>5+ years dedicated</b></div>
-            </div>
-            <div className="fact-col">
-              <div className="fact-row"><span>Business model</span><b>B2B fleet &amp; workforce supply</b></div>
-              <div className="fact-row"><span>Contracted platforms</span><b>Talabat, Noon, Keeta, Amazon</b></div>
-              <div className="fact-row"><span>Fleet type</span><b>Motorbikes — rider + bike units</b></div>
-              <div className="fact-row"><span>Revenue model</span><b>Contracted, recurring per unit</b></div>
-              <div className="fact-row"><span>Governing law</span><b>UAE — court-attested agreements</b></div>
+            <div className="facts reveal" data-delay="120">
+              <div>
+                <div className="fact"><span>Company</span><b>{site.legal}</b></div>
+                <div className="fact"><span>What we do</span><b>Delivery riders and bikes</b></div>
+                <div className="fact"><span>Where</span><b>{site.location}</b></div>
+                <div className="fact"><span>Years in the UAE</span><b>10+</b></div>
+                <div className="fact"><span>Years running fleets</span><b>5+</b></div>
+              </div>
+              <div>
+                <div className="fact"><span>Who we ride for</span><b>Talabat, Noon, Keeta, Amazon</b></div>
+                <div className="fact"><span>Fleet</span><b>Motorbikes, one per rider</b></div>
+                <div className="fact"><span>How we earn</span><b>Monthly, per bike on the road</b></div>
+                <div className="fact"><span>Agreements</span><b>Under UAE law, attested</b></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--navy-mid section--grain" id="how-we-operate">
+      <section className="section" id="how-we-work">
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Idx label="How we operate" />
-              <h2 className="h-lg reveal">Four operating pillars.</h2>
-              <p className="lede reveal" data-delay="100">
-                Built on evidence a partner or investor can verify, not broad claims.
-              </p>
+              <Eyebrow>How we work</Eyebrow>
+              <h2 className="h-lg reveal">Four things we get right.</h2>
             </div>
           </div>
-          <div className="reveal">
-            {[
-              ["W-01", "Platform partnerships", "Long-term contracts with Talabat, Noon, Keeta and Amazon anchor demand. Relationship scope and contract evidence are available for review in diligence."],
-              ["W-02", "Strong UAE legal framework", "Agreements follow UAE law, including court-attested MOUs. Rights and remedies are set out in the transaction documents."],
-              ["W-03", "Transparent reporting", "Regular reporting through NSD's MIS/CRM systems gives visibility into deployed units and performance."],
-              ["W-04", "Scalable fleet economics", "More bikes and riders deployed can increase contracted income — the investor model makes the unit economics explicit."],
-            ].map(([n, t, d]) => (
-              <div className="case-row case-row--plain" key={n}>
-                <div className="ct">
-                  <h4>{t}</h4>
-                  <p>{d}</p>
+          <div className="card-grid card-grid--4">
+            {pillars.map((p, i) => (
+              <div className="card reveal" data-delay={i * 80} key={p.title}>
+                <div className="icon">
+                  <p.Icon />
                 </div>
+                <h4>{p.title}</h4>
+                <p>{p.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section--paper" id="hq">
+      <section className="section section--soft" id="where">
         <div className="wrap">
-          <div className="two two--center two--wide">
-            <div className="photo reveal" style={{ aspectRatio: "3/2" }}>
-              <Image
-                src="/images/rider-on-shift.jpg"
-                alt="An NSD rider on shift for a partner delivery platform"
-                width={1248}
-                height={832}
-                sizes="(max-width: 900px) 100vw, 45vw"
-              />
-              <div className="photo-tag">Al Quoz 2 · Dubai</div>
+          <div className="two">
+            <div className="reveal">
+              <Fleet compact />
             </div>
             <div>
-              <Idx label="Head office" />
-              <h2 className="h-lg reveal">Based in Al Quoz, operating across the UAE.</h2>
+              <Eyebrow>Where we are</Eyebrow>
+              <h2 className="h-lg reveal">Based in the UAE, riding across it.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
-                Our depot and head office sit in Al Quoz 2, Dubai — central to the platforms we serve and the
-                zones our riders work.
+                Our riders cover the zones the apps need, and our team is a phone call away.
               </p>
-              <div className="copy reveal" data-delay="160" style={{ marginTop: 24 }}>
-                <p className="mono" style={{ fontSize: 13.5, lineHeight: 1.9 }}>
-                  {site.legal}
-                  <br />
-                  {site.address[0]}
-                  <br />
-                  {site.address[1]}
-                  <br />
-                  <a href={site.phoneHref} className="arrow-link">
-                    {site.phone}
-                  </a>
-                  <br />
-                  <a href={`mailto:${site.email}`} className="arrow-link">
-                    {site.email}
-                  </a>
-                </p>
-              </div>
-              <div className="btn-row reveal" data-delay="220">
-                <Link href="/contact" className="btn btn-solid">
-                  Contact NSD →
+              <div className="btn-row reveal" data-delay="160">
+                <Link href="/contact" className="btn btn-primary">
+                  Contact us
                 </Link>
+                <a href={site.phoneHref} className="btn btn-secondary">
+                  {site.phone}
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <CtaBand title="Want the full operating profile? Start with the investor overview." />
+      <CtaBand title="Want the full picture? Start with the investor page." />
     </>
   );
 }

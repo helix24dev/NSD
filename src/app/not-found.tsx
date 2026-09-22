@@ -1,23 +1,23 @@
 import Link from "next/link";
-import Idx from "@/components/Idx";
+import Eyebrow from "@/components/Eyebrow";
 
 export default function NotFound() {
   return (
-    <section className="section section--navy section--grain section--grid" style={{ minHeight: "70vh" }}>
+    <section className="section d-pattern" style={{ minHeight: "60vh" }}>
       <div className="wrap">
-        <Idx label="404 · Off route" />
+        <Eyebrow>Page not found</Eyebrow>
         <h1 className="h-xl">
-          This page isn&rsquo;t on <em>the route.</em>
+          This page has <em>moved on.</em>
         </h1>
-        <p className="lede" style={{ marginTop: 20 }}>
-          The address may have changed. Head back to the depot.
+        <p className="lede" style={{ marginTop: 18 }}>
+          The link may be old or mistyped. Head back to the home page.
         </p>
         <div className="btn-row">
-          <Link href="/" className="btn btn-solid">
-            Back to home →
+          <Link href="/" className="btn btn-primary">
+            Back to home
           </Link>
-          <Link href="/contact" className="btn btn-line">
-            Contact NSD
+          <Link href="/contact" className="btn btn-secondary">
+            Contact us
           </Link>
         </div>
       </div>

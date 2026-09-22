@@ -13,15 +13,15 @@ export default function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="section section--navy section--grain section--grid page-hero">
+    <section className="page-hero d-pattern">
       <div className="wrap">
         <div className="crumbs">
-          <Link href="/">NSD</Link>
+          <Link href="/">Home</Link>
           <i>/</i>
           <span>{crumb}</span>
         </div>
         <h1 className="reveal">{title}</h1>
-        <p className="lede reveal" data-delay="120">
+        <p className="lede reveal" data-delay="100">
           {lede}
         </p>
         {children}

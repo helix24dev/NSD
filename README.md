@@ -6,12 +6,12 @@ Multi-page corporate site for Non Stop Delivery LLC, built with Next.js 16 (App 
 
 | Route         | Purpose                                                                 |
 | ------------- | ----------------------------------------------------------------------- |
-| `/`           | Home — hero, what we do, how the model works, market, partners, investor teaser |
-| `/about`      | Company story, facts ledger, four operating pillars, head office        |
-| `/services`   | Fleet & workforce services, "the unit", for-platforms process           |
-| `/partners`   | Talabat, Noon, Keeta, Amazon; why platforms work with NSD; become a partner |
-| `/investors`  | Investment case, Fleet-to-Returns calculator, due diligence, process, enquiry form |
-| `/contact`    | General enquiry form, head office, who-to-contact routing               |
+| `/`           | Home — hero with fleet illustration, what we do, how it works, why the UAE, numbers, investor bento |
+| `/about`      | Company story, facts, how we work, where we are                          |
+| `/services`   | What we do: hiring, bikes, keeping riders on the road, reporting          |
+| `/delivery-apps` | Talabat, Noon, Keeta, Amazon; why apps use NSD; work with us |
+| `/investors`  | Why invest (bento), returns calculator, questions, how it works, enquiry form |
+| `/contact`    | Enquiry form and contact details                                         |
 
 `sitemap.xml`, `robots.txt`, favicons and OpenGraph metadata are generated from `src/lib/site.ts`.
 
@@ -34,12 +34,13 @@ npm run build
 
 ## Where things live
 
-- `src/app/globals.css` — design tokens and shared component styles (ledgers, cards, buttons, forms).
-- `src/lib/site.ts` — company details, contact info, partner list, primary navigation.
+- `src/app/globals.css` — design tokens (white theme, Poppins, brand orange, fleet palette) and shared component styles (cards, bento, forms).
+- `src/lib/site.ts` — company details, contact info, delivery apps list, navigation, fleet colours.
+- `src/components/Fleet.tsx` — the multi-colour rider illustration (no branding).
 - `src/components/Calculator.tsx` — the interactive returns model (client component, canvas chart).
 - `src/components/LeadForm.tsx` — enquiry form; submits via `mailto:` to `info@nonstopdelivery.com`. Swap the `onSubmit` for a form backend (Formspree, Resend, etc.) when one is chosen.
-- `public/brand/` — logo mark and lockup; `public/images/` — photography.
+- `public/brand/` — dark logo mark, the D tile used as the hero background pattern.
 
 ## Content notes
 
-All figures and claims come from the original investor overview (10+ years UAE, 5+ years 3PL, four contracted platforms, Al Quoz HQ). Nothing numeric has been added; fleet/rider counts are intentionally left as "available on request".
+All figures come from the original investor overview (10+ years in the UAE, 5+ years running fleets, four delivery apps). Nothing numeric has been added; fleet and rider counts are intentionally "available on request". Copy stays in plain language and avoids describing the app relationships in legal terms.

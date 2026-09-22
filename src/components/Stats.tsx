@@ -2,16 +2,16 @@ import CountUp from "./CountUp";
 
 const stats = [
   { n: 10, suffix: "+", label: "Years operating in the UAE" },
-  { n: 5, suffix: "+", label: "Years of dedicated 3PL expertise" },
-  { n: 4, suffix: "", label: "Major platform partnerships" },
-  { n: 100, suffix: "%", label: "Fleet & workforce supply model" },
+  { n: 5, suffix: "+", label: "Years running delivery fleets" },
+  { n: 4, suffix: "", label: "Leading delivery apps we ride for" },
+  { n: 100, suffix: "%", label: "Rider plus bike, supplied together" },
 ];
 
-export default function StatLedger() {
+export default function Stats() {
   return (
-    <div className="stat-ledger">
+    <div className="stats">
       {stats.map((s, i) => (
-        <div className="stat-cell reveal" data-delay={i * 90} key={s.label}>
+        <div className="stat reveal" data-delay={i * 80} key={s.label}>
           <div className="v tnum">
             <CountUp to={s.n} />
             <span>{s.suffix}</span>

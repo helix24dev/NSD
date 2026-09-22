@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { nav, site } from "@/lib/site";
-import DubaiClock from "./DubaiClock";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -9,32 +8,25 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className="wrap">
         <div className={styles.top}>
-          <div className={styles.brandCol}>
-            <Image src="/brand/nsd-lockup.png" alt="Non-Stop Delivery" width={150} height={69} />
+          <div>
+            <Link href="/" className={styles.brand} aria-label="Non Stop Delivery — home">
+              <Image src="/brand/nsd-mark-dark.png" alt="NSD" width={96} height={34} />
+              <span>Non Stop Delivery</span>
+            </Link>
             <p className={styles.blurb}>
-              Fleet &amp; workforce operator supplying contracted rider and bike capacity to the UAE&rsquo;s
-              leading delivery platforms.
+              Trained delivery riders and well-maintained motorbikes for the UAE&rsquo;s leading delivery apps.
             </p>
-            <div className={styles.tags}>
-              <span>NSD</span>
-              <span>UAE</span>
-              <span>3PL</span>
-            </div>
           </div>
 
           <div className={styles.col}>
-            <div className={styles.colCap}>Navigate</div>
+            <div className={styles.colCap}>Company</div>
             <ul>
               <li>
-                <Link href="/">
-                  Home
-                </Link>
+                <Link href="/">Home</Link>
               </li>
               {nav.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href}>
-                    {n.label}
-                  </Link>
+                  <Link href={n.href}>{n.label}</Link>
                 </li>
               ))}
             </ul>
@@ -43,22 +35,30 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.colCap}>Investors</div>
             <ul>
-              <li><Link href="/investors#case">The case</Link></li>
-              <li><Link href="/investors#model">Returns model</Link></li>
-              <li><Link href="/investors#diligence">Due diligence</Link></li>
-              <li><Link href="/investors#process">Process</Link></li>
-              <li><Link href="/investors#enquiry">Request overview</Link></li>
+              <li>
+                <Link href="/investors#why">Why invest</Link>
+              </li>
+              <li>
+                <Link href="/investors#calculator">Returns calculator</Link>
+              </li>
+              <li>
+                <Link href="/investors#questions">Your questions</Link>
+              </li>
+              <li>
+                <Link href="/investors#steps">How it works</Link>
+              </li>
+              <li>
+                <Link href="/investors#enquiry">Get in touch</Link>
+              </li>
             </ul>
           </div>
 
           <div className={styles.col}>
-            <div className={styles.colCap}>Head office</div>
+            <div className={styles.colCap}>Contact</div>
             <address className={styles.addr}>
               {site.legal}
               <br />
-              {site.address[0]}
-              <br />
-              {site.address[1]}
+              {site.location}
               <br />
               <a href={site.phoneHref}>{site.phone}</a>
               <br />
@@ -69,11 +69,9 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <div className={styles.legal}>
-            © <span>{new Date().getFullYear()}</span> {site.legal.toUpperCase()} · FOR DISCUSSION ONLY, NOT AN
-            OFFER OR FINANCIAL ADVICE. All investment terms, returns and legal rights are subject to definitive
-            documentation and due diligence.
+            © {new Date().getFullYear()} {site.legal}. For information only — not an offer or financial advice.
+            Investment terms and returns are subject to final documentation and due diligence.
           </div>
-          <DubaiClock />
         </div>
       </div>
     </footer>
