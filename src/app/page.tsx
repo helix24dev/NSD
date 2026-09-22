@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
 import Fleet from "@/components/Fleet";
-import Marquee from "@/components/Marquee";
+import AppLogos from "@/components/AppLogos";
+import Picture from "@/components/Picture";
 import Stats from "@/components/Stats";
 import CtaBand from "@/components/CtaBand";
 import { IconRider, IconBike, IconRoute, IconGrowth, IconMap, IconBag, IconShield, IconReport, IconChart } from "@/components/Icons";
@@ -21,7 +22,7 @@ export default function Home() {
               </h1>
               <p className={`lede ${styles.heroLede} reveal`} data-delay="100">
                 Non Stop Delivery supplies trained riders and well-maintained motorbikes to Talabat, Noon, Keeta
-                and Amazon — so orders keep moving, every hour of every day.
+                and Amazon, so orders keep moving every hour of every day.
               </p>
               <div className="btn-row reveal" data-delay="200">
                 <Link href="/services" className="btn btn-primary">
@@ -47,7 +48,13 @@ export default function Home() {
               </div>
             </div>
             <div className={`${styles.heroArt} reveal`} data-delay="150">
-              <Fleet />
+              <Picture
+                name="home-hero"
+                alt="Delivery riders in different coloured uniforms on motorbikes on a UAE street"
+                ratio="4x3"
+                priority
+                fallback={<Fleet />}
+              />
             </div>
           </div>
         </div>
@@ -57,8 +64,8 @@ export default function Home() {
       <section className={styles.apps}>
         <div className="wrap">
           <p className={styles.appsCap}>Our riders deliver for</p>
+          <AppLogos />
         </div>
-        <Marquee />
       </section>
 
       {/* ---------------- WHAT WE DO ---------------- */}
@@ -68,7 +75,7 @@ export default function Home() {
             <div>
               <Eyebrow>What we do</Eyebrow>
               <h2 className="h-lg reveal">
-                We keep delivery apps moving — <em>one rider and one bike at a time.</em>
+                We keep delivery apps moving, <em>one rider and one bike at a time.</em>
               </h2>
             </div>
             <Link href="/services" className="text-link reveal">
@@ -94,7 +101,7 @@ export default function Home() {
                 <IconBike />
               </div>
               <h4>Well-maintained bikes</h4>
-              <p>Every rider comes with a motorbike we own, service and keep on the road — so downtime stays low.</p>
+              <p>Every rider comes with a motorbike we own, service and keep on the road, so downtime stays low.</p>
               <ul className="checks">
                 <li>Regular servicing</li>
                 <li>Gear and safety kit</li>
@@ -106,7 +113,7 @@ export default function Home() {
                 <IconRoute />
               </div>
               <h4>Ready when apps need more</h4>
-              <p>New zones, busy seasons, big launches — we add riders and bikes as demand grows, with clear reporting.</p>
+              <p>New zones, busy seasons, big launches. We add riders and bikes as demand grows, with clear reporting.</p>
               <ul className="checks">
                 <li>Scale up quickly</li>
                 <li>Riders work on the app itself</li>
@@ -122,7 +129,7 @@ export default function Home() {
         <div className="wrap">
           <div className="two two--top">
             <div>
-              <Eyebrow>Simple by design</Eyebrow>
+              <Eyebrow data-tone="blue">Simple by design</Eyebrow>
               <h2 className="h-lg reveal">We supply the riders. The apps do the delivering.</h2>
               <div className="copy reveal" data-delay="100" style={{ marginTop: 22 }}>
                 <p>
@@ -130,7 +137,7 @@ export default function Home() {
                   the apps supplied with people and bikes.
                 </p>
                 <p>
-                  Delivery apps own the customer, the order and the app. We own the hard part underneath — the
+                  Delivery apps own the customer, the order and the app. We own the hard part underneath: the
                   riders, the bikes, and keeping both on the road day after day.
                 </p>
               </div>
@@ -169,12 +176,15 @@ export default function Home() {
       <section className="section" id="why-uae">
         <div className="wrap">
           <div className="two">
-            <div className={`${styles.fleetCard} reveal`}>
-              <Fleet compact />
-              <p>Riders in every colour, on every road in the UAE.</p>
-            </div>
+            <Picture
+              name="home-uae"
+              alt="A delivery rider on a motorbike with the Dubai skyline behind"
+              ratio="4x3"
+              className="reveal"
+              fallback={<Fleet compact />}
+            />
             <div>
-              <Eyebrow>Why the UAE</Eyebrow>
+              <Eyebrow data-tone="green">Why the UAE</Eyebrow>
               <h2 className="h-lg reveal">Online ordering keeps growing. So does the need for riders.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Two things drive demand for our fleet: people ordering more online, and a country investing in
@@ -182,7 +192,7 @@ export default function Home() {
               </p>
               <div className="points reveal" data-delay="180" style={{ marginTop: 24 }}>
                 {[
-                  [IconGrowth, "More online orders every year", "Food, groceries and shopping — UAE customers expect it at the door, fast."],
+                  [IconGrowth, "More online orders every year", "Food, groceries and shopping. UAE customers expect it at the door, fast."],
                   [IconMap, "Cities built for movement", "Dubai 2040 and Abu Dhabi 2030 plans put smart, connected mobility first."],
                   [IconBag, "Apps grow demand, we grow supply", "As the apps win more customers, they need more riders on the road."],
                 ].map(([Icon, t, d]) => {
@@ -210,7 +220,7 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head sec-head--center">
             <div>
-              <Eyebrow>In numbers</Eyebrow>
+              <Eyebrow data-tone="navy">In numbers</Eyebrow>
               <h2 className="h-lg reveal">A decade on UAE roads.</h2>
             </div>
           </div>
@@ -228,7 +238,7 @@ export default function Home() {
                 Fund bikes on the road. <em>Earn from every one.</em>
               </h2>
               <p className="lede reveal" data-delay="100">
-                A clear way to invest in the UAE&rsquo;s delivery growth — with a returns calculator, honest answers
+                A clear way to invest in the UAE&rsquo;s delivery growth, with a returns calculator, honest answers
                 and a step-by-step process.
               </p>
             </div>
@@ -245,16 +255,16 @@ export default function Home() {
                 You fund the bikes and riders. We recruit, train, maintain and deploy them. The apps keep them
                 busy. You receive a share of what each bike earns, every month, for the length of the term.
               </p>
-              <Link href="/investors#calculator" className="btn btn-primary">
+              <Link href="/investors/calculator" className="btn btn-primary">
                 Try the returns calculator
               </Link>
             </div>
-            <div className="tile tile-tint b-3 reveal" data-delay="80">
+            <div className="tile tile-orange b-3 reveal" data-delay="80">
               <div className="small">Demand</div>
               <div className="big">4</div>
               <p>leading delivery apps our riders deliver for</p>
             </div>
-            <div className="tile tile-soft b-3 reveal" data-delay="120">
+            <div className="tile tile-blue b-3 reveal" data-delay="120">
               <div className="small">Experience</div>
               <div className="big">10+</div>
               <p>years operating in the UAE</p>
@@ -271,7 +281,7 @@ export default function Home() {
                 <IconReport />
               </div>
               <h4 className={styles.tileH4}>Clear monthly reporting</h4>
-              <p>Bikes on the road, income earned and any issues — reported to you regularly.</p>
+              <p>Bikes on the road, income earned and any issues, reported to you regularly.</p>
             </div>
           </div>
         </div>

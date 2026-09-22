@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
-import Marquee from "@/components/Marquee";
+import AppLogos from "@/components/AppLogos";
+import Picture from "@/components/Picture";
+import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
 import { IconClock, IconRider, IconWrench, IconShield } from "@/components/Icons";
 import { fleetColors } from "@/lib/site";
@@ -31,11 +33,13 @@ export default function DeliveryAppsPage() {
             Our riders deliver for the UAE&rsquo;s <em>leading apps.</em>
           </>
         }
-        lede="Four of the biggest names in UAE delivery rely on riders and bikes from Non Stop Delivery. We don't run an app of our own — we keep theirs supplied."
+        lede="Four of the biggest names in UAE delivery rely on riders and bikes from Non Stop Delivery. We don't run an app of our own. We keep theirs supplied."
       />
 
       <div className={styles.marqueeWrap}>
-        <Marquee />
+        <div className="wrap">
+          <AppLogos grid />
+        </div>
       </div>
 
       <section className="section" id="apps">
@@ -70,7 +74,7 @@ export default function DeliveryAppsPage() {
         <div className="wrap">
           <div className="two two--top">
             <div>
-              <Eyebrow>Why apps choose us</Eyebrow>
+              <Eyebrow data-tone="blue">Why apps choose us</Eyebrow>
               <h2 className="h-lg reveal">We add riders. We never compete.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Apps own the customer and the order. We stay behind the scenes and make sure there are always
@@ -106,7 +110,7 @@ export default function DeliveryAppsPage() {
         <div className="wrap">
           <div className="two">
             <div>
-              <Eyebrow>Growing in the UAE?</Eyebrow>
+              <Eyebrow data-tone="green">Growing in the UAE?</Eyebrow>
               <h2 className="h-lg reveal">Add Non Stop Delivery riders to your app.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Tell us the zones, how many riders you need and your start date. We&rsquo;ll come back with a
@@ -121,7 +125,17 @@ export default function DeliveryAppsPage() {
                 </Link>
               </div>
             </div>
-            <div className="card reveal" data-delay="140">
+            <div className="reveal" data-delay="140">
+              <Picture
+                name="apps-riders"
+                alt="Delivery riders in several different coloured uniforms waiting outside a restaurant"
+                ratio="4x3"
+                fallback={<Fleet compact />}
+              />
+            </div>
+          </div>
+          <div className="card-grid card-grid--2" style={{ marginTop: 20 }}>
+            <div className="card reveal">
               <h4>What comes with every rider</h4>
               <ul className="checks">
                 <li>Hired, trained and documented</li>

@@ -21,5 +21,5 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Colours riders wear across the UAE — used for the fleet illustration and accents. */
+/** Colours riders wear across the UAE, used for the fleet illustration and accents. */
 export const fleetColors = ["var(--f-orange)", "var(--f-yellow)", "var(--f-green)", "var(--f-blue)", "var(--f-red)"];

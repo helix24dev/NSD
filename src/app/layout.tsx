@@ -26,8 +26,8 @@ const baseUrl = previewUrl ?? site.url;
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.tagline}`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   openGraph: {

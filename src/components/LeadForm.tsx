@@ -22,15 +22,15 @@ export default function LeadForm({ variant = "investor" }: { variant?: Variant }
     const g = (k: string) => String(fd.get(k) || "").trim();
     const lines = [
       `Name: ${g("name")}`,
-      `Company: ${g("company") || "—"}`,
+      `Company: ${g("company") || "-"}`,
       `Email: ${g("email")}`,
-      `Phone: ${g("phone") || "—"}`,
-      variant === "investor" ? `Investment range: ${g("ticket") || "—"}` : `Topic: ${g("topic") || "—"}`,
+      `Phone: ${g("phone") || "-"}`,
+      variant === "investor" ? `Investment range: ${g("ticket") || "-"}` : `Topic: ${g("topic") || "-"}`,
       "",
       "Message:",
-      g("message") || "—",
+      g("message") || "-",
     ].join("\n");
-    const subject = (variant === "investor" ? "Investor enquiry — " : "Enquiry — ") + g("name");
+    const subject = (variant === "investor" ? "Investor enquiry from " : "Enquiry from ") + g("name");
     const mailto = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
     setStatus("Opening your email app…");
     window.location.href = mailto;

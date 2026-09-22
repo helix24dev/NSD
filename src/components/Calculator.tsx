@@ -186,7 +186,7 @@ export default function Calculator() {
             <Out label="Monthly return" value={fmtAED(out.monthly)} accent />
             <Out
               label="Money back in"
-              value={(isFinite(out.payback) ? out.payback.toFixed(1) : "—") + " mo"}
+              value={(isFinite(out.payback) ? out.payback.toFixed(1) : "-") + " mo"}
               sub={`of a ${v.term}-month term`}
             />
             <Out

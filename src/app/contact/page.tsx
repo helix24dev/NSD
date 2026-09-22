@@ -9,7 +9,7 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Non Stop Delivery in the UAE — for delivery riders and bikes, investing in a fleet, or riding with us.",
+    "Get in touch with Non Stop Delivery in the UAE for delivery riders and bikes, investing in a fleet, or riding with us.",
 };
 
 export default function ContactPage() {
@@ -22,7 +22,7 @@ export default function ContactPage() {
             Let&rsquo;s <em>talk.</em>
           </>
         }
-        lede="Riders for your app, a fleet to invest in, or a question about riding with us — send a message and the right person will get back to you."
+        lede="Riders for your app, a fleet to invest in, or a question about riding with us. Send a message and the right person will get back to you."
       />
 
       <section className="section section--soft" id="form">

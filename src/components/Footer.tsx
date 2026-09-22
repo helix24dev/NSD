@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="wrap">
         <div className={styles.top}>
           <div>
-            <Link href="/" className={styles.brand} aria-label="Non Stop Delivery — home">
+            <Link href="/" className={styles.brand} aria-label="Non Stop Delivery home">
               <Image src="/brand/nsd-mark-dark.png" alt="NSD" width={96} height={34} />
               <span>Non Stop Delivery</span>
             </Link>
@@ -36,19 +36,19 @@ export default function Footer() {
             <div className={styles.colCap}>Investors</div>
             <ul>
               <li>
-                <Link href="/investors#why">Why invest</Link>
+                <Link href="/investors">Overview</Link>
               </li>
               <li>
-                <Link href="/investors#calculator">Returns calculator</Link>
+                <Link href="/investors/calculator">Returns calculator</Link>
               </li>
               <li>
-                <Link href="/investors#questions">Your questions</Link>
+                <Link href="/investors/questions">Your questions</Link>
               </li>
               <li>
-                <Link href="/investors#steps">How it works</Link>
+                <Link href="/investors/how-it-works">How it works</Link>
               </li>
               <li>
-                <Link href="/investors#enquiry">Get in touch</Link>
+                <Link href="/investors/enquiry">Get in touch</Link>
               </li>
             </ul>
           </div>
@@ -69,7 +69,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <div className={styles.legal}>
-            © {new Date().getFullYear()} {site.legal}. For information only — not an offer or financial advice.
+            © {new Date().getFullYear()} {site.legal}. For information only, not an offer or financial advice.
             Investment terms and returns are subject to final documentation and due diligence.
           </div>
         </div>

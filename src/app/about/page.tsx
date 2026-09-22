@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
 import Stats from "@/components/Stats";
 import Fleet from "@/components/Fleet";
+import Picture from "@/components/Picture";
 import CtaBand from "@/components/CtaBand";
 import { IconBag, IconShield, IconReport, IconGrowth } from "@/components/Icons";
 import { site } from "@/lib/site";
@@ -18,7 +19,7 @@ const pillars = [
   { Icon: IconBag, title: "Steady demand from the apps", text: "Talabat, Noon, Keeta and Amazon keep our riders busy every day, and they need more riders as they grow." },
   { Icon: IconShield, title: "Clear agreements under UAE law", text: "Everything is written down and attested in the UAE, so everyone knows exactly where they stand." },
   { Icon: IconReport, title: "Honest, regular reporting", text: "Bikes on the road, income earned and any issues are reported clearly and on time." },
-  { Icon: IconGrowth, title: "Built to grow", text: "More riders and bikes on the road means more income — the model scales as demand does." },
+  { Icon: IconGrowth, title: "Built to grow", text: "More riders and bikes on the road means more income. The model grows as demand grows." },
 ];
 
 export default function AboutPage() {
@@ -31,7 +32,7 @@ export default function AboutPage() {
             Ten years on UAE roads. <em>Built for delivery apps.</em>
           </>
         }
-        lede="Non Stop Delivery LLC is a UAE fleet company. We supply the riders and bikes that keep the country's biggest delivery apps moving — we don't run our own app, and we don't compete with theirs."
+        lede="Non Stop Delivery LLC is a UAE fleet company. We supply the riders and bikes that keep the country's biggest delivery apps moving. We don't run our own app, and we don't compete with theirs."
       >
         <div style={{ marginTop: 48 }}>
           <Stats />
@@ -56,7 +57,7 @@ export default function AboutPage() {
                 order; we handle everything that gets the rider to the door.
               </p>
               <p>
-                That focus is why the apps keep asking us for more riders — and why every bike we add to the road
+                That focus is why the apps keep asking us for more riders, and why every bike we add to the road
                 earns a steady monthly income.
               </p>
             </div>
@@ -68,7 +69,7 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="two two--top">
             <div>
-              <Eyebrow>At a glance</Eyebrow>
+              <Eyebrow data-tone="blue">At a glance</Eyebrow>
               <h2 className="h-lg reveal">The company in brief.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 A quick profile. More detail is available when you get in touch.
@@ -97,7 +98,7 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <Eyebrow>How we work</Eyebrow>
+              <Eyebrow data-tone="green">How we work</Eyebrow>
               <h2 className="h-lg reveal">Four things we get right.</h2>
             </div>
           </div>
@@ -118,11 +119,15 @@ export default function AboutPage() {
       <section className="section section--soft" id="where">
         <div className="wrap">
           <div className="two">
-            <div className="reveal">
-              <Fleet compact />
-            </div>
+            <Picture
+              name="about-team"
+              alt="The Non Stop Delivery operations team at a depot with motorbikes in the background"
+              ratio="4x3"
+              className="reveal"
+              fallback={<Fleet compact />}
+            />
             <div>
-              <Eyebrow>Where we are</Eyebrow>
+              <Eyebrow data-tone="navy">Where we are</Eyebrow>
               <h2 className="h-lg reveal">Based in the UAE, riding across it.</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Our riders cover the zones the apps need, and our team is a phone call away.

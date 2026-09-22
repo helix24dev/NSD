@@ -34,7 +34,7 @@ export default function Header() {
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
         <div className={`wrap ${styles.bar}`}>
-          <Link href="/" className={styles.brand} aria-label="Non Stop Delivery — home">
+          <Link href="/" className={styles.brand} aria-label="Non Stop Delivery home">
             <Image src="/brand/nsd-mark-dark.png" alt="NSD" width={82} height={29} priority />
             <span>Non Stop Delivery</span>
           </Link>
@@ -55,7 +55,7 @@ export default function Header() {
           </nav>
 
           <div className={styles.right}>
-            <Link href="/investors#enquiry" className={`btn btn-primary ${styles.cta}`}>
+            <Link href="/investors/enquiry" className={`btn btn-primary ${styles.cta}`}>
               Investor enquiry
             </Link>
             <button
@@ -84,7 +84,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <Link href="/investors#enquiry" className="btn btn-primary">
+        <Link href="/investors/enquiry" className="btn btn-primary">
           Investor enquiry
         </Link>
       </div>

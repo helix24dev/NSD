@@ -3,11 +3,12 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
 import Fleet from "@/components/Fleet";
+import Picture from "@/components/Picture";
 import CtaBand from "@/components/CtaBand";
 import { IconRider, IconBike, IconRoute, IconReport, IconWrench, IconClock, IconBag } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "What we do — delivery riders and bikes",
+  title: "What we do: delivery riders and bikes",
   description:
     "Non Stop Delivery hires and trains delivery riders, supplies and maintains motorbikes, and keeps both on the road for the UAE's leading delivery apps.",
 };
@@ -17,7 +18,7 @@ const services = [
     Icon: IconRider,
     title: "Hiring and training riders",
     lede: "A trained, ready rider for every bike.",
-    body: "We find the riders, sort their paperwork, train them to each app's standards and support them on every shift — so they're ready from day one.",
+    body: "We find the riders, sort their paperwork, train them to each app's standards and support them on every shift, so they're ready from day one.",
     points: ["Hiring and onboarding", "Training for each app", "Documents and compliance", "Shift planning and support"],
   },
   {
@@ -38,7 +39,7 @@ const services = [
     Icon: IconReport,
     title: "Simple, regular reporting",
     lede: "You always know what's on the road.",
-    body: "Apps and investors get clear reports on riders, bikes, hours and income — on a set schedule, in plain language.",
+    body: "Apps and investors get clear reports on riders, bikes, hours and income, on a set schedule and in plain language.",
     points: ["Bikes and riders on the road", "Hours and performance", "Income and costs", "Anything that needs attention"],
   },
 ];
@@ -53,10 +54,15 @@ export default function ServicesPage() {
             Riders and bikes, <em>ready to deliver.</em>
           </>
         }
-        lede="One trained rider, one well-maintained motorbike. We hire, train, equip and look after both — delivery apps simply add the capacity to their app."
+        lede="One trained rider, one well-maintained motorbike. We hire, train, equip and look after both. Delivery apps simply add the capacity to their app."
       >
         <div style={{ marginTop: 40 }} className="reveal">
-          <Fleet compact />
+          <Picture
+            name="services-workshop"
+            alt="A mechanic servicing a delivery motorbike in a clean workshop"
+            ratio="16x10"
+            fallback={<Fleet compact />}
+          />
         </div>
       </PageHero>
 
@@ -92,7 +98,7 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="two two--top">
             <div>
-              <Eyebrow>One rider, one bike</Eyebrow>
+              <Eyebrow data-tone="blue">One rider, one bike</Eyebrow>
               <h2 className="h-lg reveal">
                 Everything we do comes down to <em>one rider and one bike.</em>
               </h2>
@@ -130,11 +136,11 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="two">
             <div>
-              <Eyebrow>For delivery apps</Eyebrow>
+              <Eyebrow data-tone="green">For delivery apps</Eyebrow>
               <h2 className="h-lg reveal">Need more riders in a new zone, or for a busy season?</h2>
               <p className="lede reveal" data-delay="100" style={{ marginTop: 16 }}>
                 Our riders already deliver for Talabat, Noon, Keeta and Amazon. Tell us the zone, how many riders
-                you need and when — we&rsquo;ll take it from there.
+                you need and when. We&rsquo;ll take it from there.
               </p>
               <div className="btn-row reveal" data-delay="160">
                 <Link href="/contact" className="btn btn-primary">
@@ -162,7 +168,7 @@ export default function ServicesPage() {
       </section>
 
       <CtaBand
-        title="More riders for your app — or a fleet to invest in."
+        title="More riders for your app, or a fleet to invest in."
         primary={{ href: "/contact", label: "Talk to us" }}
         secondary={{ href: "/investors", label: "For investors" }}
       />
