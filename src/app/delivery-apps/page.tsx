@@ -3,7 +3,6 @@ import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
 import AppLogos from "@/components/AppLogos";
 import Picture from "@/components/Picture";
-import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
 import { IconClock, IconRider, IconWrench, IconShield } from "@/components/Icons";
 import styles from "./apps.module.css";
@@ -66,11 +65,9 @@ export default function DeliveryAppsPage() {
               </div>
             </div>
             <Picture
-              name="apps-riders"
-              alt="Delivery riders in several different coloured uniforms waiting outside a restaurant"
-              ratio="4x3"
+              name="riders-front"
+              alt="Five delivery riders in different coloured uniforms on motorbikes"
               className="reveal"
-              fallback={<Fleet compact />}
             />
           </div>
         </div>

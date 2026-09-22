@@ -4,7 +4,6 @@ import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
 import InvestorNav from "@/components/InvestorNav";
 import Picture from "@/components/Picture";
-import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
 import { IconShield, IconReport, IconChart, IconCoins } from "@/components/Icons";
 import styles from "./investors.module.css";
@@ -92,11 +91,9 @@ export default function InvestorsPage() {
         <div className="wrap">
           <div className="two">
             <Picture
-              name="investors-fleet"
-              alt="A row of delivery motorbikes lined up outside a depot in the UAE"
-              ratio="4x3"
+              name="fleet-bikes"
+              alt="Five delivery motorbikes with coloured delivery boxes, ready for the road"
               className="reveal"
-              fallback={<Fleet compact />}
             />
             <div>
               <Eyebrow>The idea in one minute</Eyebrow>

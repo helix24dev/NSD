@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
-import Fleet from "@/components/Fleet";
 import Picture from "@/components/Picture";
 import CtaBand from "@/components/CtaBand";
 import { site } from "@/lib/site";
@@ -64,11 +63,9 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="two">
             <Picture
-              name="about-team"
-              alt="The Non Stop Delivery operations team at a depot with motorbikes in the background"
-              ratio="4x3"
+              name="riders-back"
+              alt="A line of delivery riders in different coloured uniforms heading out on their bikes"
               className="reveal"
-              fallback={<Fleet compact />}
             />
             <div>
               <Eyebrow>Where we are</Eyebrow>

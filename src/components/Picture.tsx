@@ -1,44 +1,35 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
-import type { ReactNode } from "react";
 
-/**
- * A slot for a generated photo. Put the file at public/images/<name>.(webp|jpg|jpeg|png)
- * and it is picked up at build time; until then the fallback (usually the fleet illustration) shows.
- * IMAGES.md lists every slot with a generation prompt.
- */
+/** Transparent artwork from public/images, rendered at its natural aspect ratio with no box around it. */
+const art = {
+  "riders-front": { w: 1500, h: 908 },
+  "riders-back": { w: 1522, h: 896 },
+  "fleet-bikes": { w: 1600, h: 752 },
+} as const;
+
 export default function Picture({
   name,
   alt,
-  ratio = "16x10",
-  fallback,
   priority = false,
   className = "",
+  sizes = "(max-width: 900px) 100vw, 50vw",
 }: {
-  name: string;
+  name: keyof typeof art;
   alt: string;
-  ratio?: "16x10" | "4x3" | "1x1";
-  fallback?: ReactNode;
   priority?: boolean;
   className?: string;
+  sizes?: string;
 }) {
-  let src: string | null = null;
-  for (const ext of ["webp", "jpg", "jpeg", "png"]) {
-    if (fs.existsSync(path.join(process.cwd(), "public", "images", `${name}.${ext}`))) {
-      src = `/images/${name}.${ext}`;
-      break;
-    }
-  }
+  const { w, h } = art[name];
   return (
-    <div className={`pic pic--${ratio} ${className}`}>
-      {src ? (
-        <Image src={src} alt={alt} fill sizes="(max-width: 900px) 100vw, 50vw" priority={priority} />
-      ) : (
-        <div className="pic-fallback" data-slot={name}>
-          {fallback}
-        </div>
-      )}
-    </div>
+    <Image
+      src={`/images/${name}.webp`}
+      alt={alt}
+      width={w}
+      height={h}
+      sizes={sizes}
+      priority={priority}
+      className={`art ${className}`}
+    />
   );
 }

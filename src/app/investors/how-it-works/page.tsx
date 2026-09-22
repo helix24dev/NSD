@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import InvestorNav from "@/components/InvestorNav";
 import Eyebrow from "@/components/Eyebrow";
-import Picture from "@/components/Picture";
-import Fleet from "@/components/Fleet";
 import CtaBand from "@/components/CtaBand";
 import { IconShield, IconReport, IconCoins, IconClock } from "@/components/Icons";
 import { steps } from "@/lib/investors";
@@ -74,13 +72,16 @@ export default function HowItWorksPage() {
                 })}
               </div>
             </div>
-            <Picture
-              name="investors-signing"
-              alt="Two people reviewing and signing fleet documents at a desk"
-              ratio="4x3"
-              className="reveal"
-              fallback={<Fleet compact />}
-            />
+            <div className="card reveal" data-delay="120">
+              <h4>Before you sign, you will have seen</h4>
+              <ul className="checks">
+                <li>The company profile and financials</li>
+                <li>The number of bikes and riders on the road today</li>
+                <li>A clear cost schedule for each bike</li>
+                <li>The reporting you will receive and how often</li>
+                <li>The full agreement, in plain terms</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

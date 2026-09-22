@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Eyebrow from "@/components/Eyebrow";
-import Fleet from "@/components/Fleet";
 import Picture from "@/components/Picture";
 import AppLogos from "@/components/AppLogos";
 import CtaBand from "@/components/CtaBand";
@@ -48,11 +47,9 @@ export default function Home() {
             </div>
             <div className={`${styles.heroArt} reveal`} data-delay="150">
               <Picture
-                name="home-hero"
-                alt="Delivery riders in different coloured uniforms on motorbikes on a UAE street"
-                ratio="4x3"
+                name="riders-front"
+                alt="Five delivery riders in green, yellow, red, blue and orange uniforms on motorbikes"
                 priority
-                fallback={<Fleet />}
               />
             </div>
           </div>
@@ -117,11 +114,9 @@ export default function Home() {
         <div className="wrap">
           <div className="two">
             <Picture
-              name="home-uae"
-              alt="A delivery rider on a motorbike with the Dubai skyline behind"
-              ratio="4x3"
+              name="riders-back"
+              alt="Delivery riders in different coloured uniforms riding away with delivery boxes on the back of their bikes"
               className="reveal"
-              fallback={<Fleet compact />}
             />
             <div>
               <Eyebrow>Why the UAE</Eyebrow>

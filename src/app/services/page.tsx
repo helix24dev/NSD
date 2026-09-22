@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/Eyebrow";
-import Fleet from "@/components/Fleet";
 import Picture from "@/components/Picture";
 import CtaBand from "@/components/CtaBand";
 import { IconRider, IconBike, IconRoute, IconReport } from "@/components/Icons";
@@ -53,10 +52,9 @@ export default function ServicesPage() {
       >
         <div style={{ marginTop: 40 }} className="reveal">
           <Picture
-            name="services-workshop"
-            alt="A mechanic servicing a delivery motorbike in a clean workshop"
-            ratio="16x10"
-            fallback={<Fleet compact />}
+            name="fleet-bikes"
+            alt="Five delivery motorbikes with orange, green, red, blue and yellow delivery boxes"
+            sizes="(max-width: 900px) 100vw, 1180px"
           />
         </div>
       </PageHero>
